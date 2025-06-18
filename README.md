@@ -29,7 +29,7 @@ npm run dev
 ```
 
 ## ライセンス
-MIT
+All Rights Reserved
 
 ## Getting Started
 
