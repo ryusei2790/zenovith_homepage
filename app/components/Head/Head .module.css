@@ -1,0 +1,123 @@
+.header {
+    background-color: hsl(var(--white));
+    border-bottom: 1px solid hsl(var(--border-light));
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    background-color: transparent;
+    position: relative;
+    border-radius: 20px;
+}
+
+.container {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background: transparent;
+}
+
+
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 左右に分ける */
+    padding: var(--spacing-md) 0 var(--spacing-md) 2rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: transparent;
+}
+
+.logoArea {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem; /* アイコンとテキストの間隔 */
+    margin-left: 0;
+    background-color: #fff;
+    border-bottom-right-radius: 20px;
+    flex-direction: column;
+}
+
+.logoIcon {
+    margin-top: 20px;
+    background: transparent;
+}
+
+.logoIcon img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.logoText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    left: 10px;
+    background: transparent;
+}
+
+.navMenu {
+    flex: 1; /* ここがポイント！ */
+    display: flex;
+    justify-content: center; 
+    background: transparent;
+}
+
+.headerActions {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.loginButton {
+    width: 200px;
+    height: 30px;
+    font-size: 0.7rem;
+    font-weight: 100;
+    background: black;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loginButton span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loginButton:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+
+
+
+.searchButton {
+    background: transparent;
+}
