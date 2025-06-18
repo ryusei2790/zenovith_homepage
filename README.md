@@ -1,4 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zenovith Homepage
+
+これは友達のホームページ作成ログです。Next.jsとTypeScriptを使用して、学習しながら作っていきます。
+
+## 学習内容
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- モダンなWebデザイン
+- レスポンシブデザイン
+
+## 開発環境
+- Node.js
+- npm
+- Git
+- GitHub
+
+## 始め方
+
+```bash
+# リポジトリのクローン
+git clone https://github.com/ryusei2790/Zenovith_homepage.git
+
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
+npm run dev
+```
+
+## ライセンス
+MIT
 
 ## Getting Started
 
