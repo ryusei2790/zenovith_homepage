@@ -1,0 +1,22 @@
+.imageContainer p {
+    font-size: 0.8rem;
+  }
+  
+  .imageContainer {
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 1;
+    position: relative;
+    }
+  
+    .image {
+      width: 70px;
+      height: 70px;
+      transition: transform 0.3s ease;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .image:hover {
+      transform: scale(1.05);
+    }

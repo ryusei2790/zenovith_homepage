@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from 'react';
 import styles from './styles/components/Body.module.css';
 import BodyEventCalendar from './components/BodyEventCalendar';

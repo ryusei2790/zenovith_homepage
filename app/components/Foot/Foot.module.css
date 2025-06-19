@@ -1,0 +1,208 @@
+.footer {
+    font-family: "Yu Mincho", "YuMincho", "游明朝", "Yu Mincho Demibold", "Yu Mincho Bold", serif;;
+    width: 100%;
+    height: 120vh;
+}
+
+.SNSContainer {
+    width: 100%;
+    height: 50%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.footerContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+}
+
+.footerSocial {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.socialIcon {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+
+
+.loginButton {
+    width: 200px;
+    height: 30px;
+    font-size: 0.7rem;
+    font-weight: 100;
+    background: black;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loginButton span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loginButton:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    align-items: center;
+}
+.footerTitle {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    color: hsl(var(--white));
+}
+
+.contactInfo p {
+    margin-bottom: var(--spacing-sm);
+    color: hsl(220 5% 85%);
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+
+.lastContainer {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.socialLink {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;         /* アイコンとテキストを中央揃え */
+    align-items: center;
+    justify-content: center;
+    width: px;                  /* 幅を統一 */               /* 高さを統一 */
+    border-radius: 50%;           /* 丸くしたい場合 */
+    background: #e0e0e0;          /* 背景色（任意） */
+    overflow: hidden;             /* 画像がはみ出さないように */
+    font-size: 20px;              /* アイコンフォントの場合 */
+    transition: background 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .socialLink:hover {
+    background: #bfe3f4;    
+    transform: scale(1.05);
+    transition: all 0.5s ease;      /* ホバー時の色（任意） */
+  }
+  
+  .socialLink img, .socialLink svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;            /* ここがポイント！ */
+    display: block;
+  }
+
+.socialIcon:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+
+.socialButton {
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 30px;
+    font-size: 0.7rem;
+    font-weight: 100;
+    background: black;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.socialButton span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.socialButton:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    align-items: center;
+}
+
+.footerBottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid hsl(220 10% 35%);
+    color: hsl(220 5% 70%);
+}
+
+.loginButton {
+    width: 200px;
+    height: 30px;
+    font-size: 0.7rem;
+    font-weight: 100;
+    background: black;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.loginButton span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loginButton:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    align-items: center;
+}

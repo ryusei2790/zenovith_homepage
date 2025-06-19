@@ -1,0 +1,40 @@
+.aboutDescription {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: hsl(var(--text-medium));
+    margin-bottom: var(--spacing-3xl);
+}
+
+.aboutButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    display: inline-block;
+    background-color: #cce7f1; 
+    color: #000;
+    padding: 1em 2em;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    border: none;
+    font-weight: 500;
+  }
+  
+  .aboutButton::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0.8em;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+  }
+  
+  .aboutButton:hover::after {
+    width: 50%;
+  }

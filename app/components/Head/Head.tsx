@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import NavMenu from  '../elements/NavMenu'
 import styles from './Header.module.css';
