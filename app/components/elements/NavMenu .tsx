@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from '../../../../styles/components/NavMenu.module.css';
-import MenuList from './MenuList/MenuList'
+import styles from './NavMenu.module.css';
+import MenuList from './MenuList';
 
-const NavMenu = () => {
+// NavMenuはpropsなしなので型定義は不要ですが、React.FCを明示してもOK
+const NavMenu: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.navList}>

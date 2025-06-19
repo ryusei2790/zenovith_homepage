@@ -1,7 +1,13 @@
 import React from 'react';
-import styles from '../../../../../styles/components/MenuList.module.css';
+import styles from './MenuList.module.css';
 
-const MenuList = ({ href, value }) => {
+// propsの型を定義
+type MenuListProps = {
+  href: string;
+  value: string;
+};
+
+const MenuList: React.FC<MenuListProps> = ({ href, value }) => {
   return <li><a href={href}>{value}</a></li>;
 };
 

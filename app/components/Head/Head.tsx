@@ -1,8 +1,8 @@
 import React from 'react';
-import NavMenu from './searchsection/NavMenu';
+import NavMenu from '../elements/NavMenu';
 import styles from './Header.module.css';
-import SearchButton from './searchsection/SearchButton';
-import useScrollHamburgerMenu from "../../hooks/useScrollHamburgerMenu";
+import SearchButton from '../elements/SearchButton';
+import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
 import Image from 'next/image';
 import Link from 'next/link';
 
