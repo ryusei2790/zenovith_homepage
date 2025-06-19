@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import NavMenu from  '../elements/NavMenu'
-import styles from './Header.module.css';
+import styles from './Head.module.css';
 import SearchButton from '../elements/SearchButton';
 import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
 import Image from 'next/image';

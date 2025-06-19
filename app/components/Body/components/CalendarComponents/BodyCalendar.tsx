@@ -3,7 +3,7 @@ import FullCalendar, { DateClickArg, EventClickArg, DateSelectArg } from "@fullc
 import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from "@fullcalendar/daygrid"
 import interactionPlugin from "@fullcalendar/interaction"
-import styles from '../../../../../../styles/components/BodyCalendar.module.css';
+import styles from './BodyCalendar.module.css';
 
 // イベントの型を定義（必要に応じて拡張してください）
 type EventType = {

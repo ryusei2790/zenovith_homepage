@@ -5,12 +5,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as dat from 'lil-gui';
 
-type GalaxyBackgroundProps = {
-  onReady?: () => void;
-};
-
-export default function GalaxyBackground({ onReady }: GalaxyBackgroundProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+export default function GalaxyBackground({ onReady }) {
+  const containerRef = useRef(null);
 
   useEffect(() => {
     /** サイズ設定 */
@@ -136,7 +132,7 @@ export default function GalaxyBackground({ onReady }: GalaxyBackgroundProps) {
       camera.lookAt(0, 0, 0);
       controls.update();
       renderer.render(scene, camera);
-      if (!called && onReady) {
+      if (!called && typeof onReady === 'function') {
         onReady();
         called = true;
       }

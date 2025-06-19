@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import styles from '../../../../styles/components/SearchButton.module.css';
+import styles from './SearchButton.module.css';
 
 const SearchButton: React.FC = () => {
   const [keywords, setKeywords] = useState<string[]>([]);

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import styles from './Footer.module.css';
+import styles from './Foot.module.css';
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -38,12 +38,9 @@ const Footer = () => {
             </div>
             <div className={styles.lastContainer}>
                 <div className={styles.title}>
-                <Image src="/logo.png" width={100} height={100}/>
-                <h2>Zenovith</h2>
-                    <p>
-                        <span>
-                            
-                    </p>
+                <Image src="/logo.png" alt="Zenovith" width={100} height={100} />
+                <h2>Zenovith</h2> 
+                    {/* <p> </p> */}
                 </div>
                 <div className={styles.loginButton}>
                     <Link href="/login"><span></span></Link>
@@ -53,7 +50,7 @@ const Footer = () => {
                     <li><Link href="#"><span></span></Link>
                     <Link href="#">組織・役員</Link>
                     </li>
-                    <li><Link href="#"><span>活動紹介</span></Link>
+                    <li><Link href="#"><span>活動紹介</span></Link>  </li>
                     {/* <ul>
                         <li>
                             <Link href="#"></Link>
@@ -71,7 +68,6 @@ const Footer = () => {
                         <Link href="#"></Link>
                         </li>
                     </ul> */}
-                    </li>
                     {/* <li><Link href="#"><span></span></Link></li> */}
                     <li><Link href="#"><span>お問い合わせ</span></Link></li>
                     {/* <li><Link href="#"><span></span></Link></li> */}

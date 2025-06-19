@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
-import styles from './styles/components/Body.module.css';
+import styles from './Body.module.css';
 import BodyEventCalendar from './components/BodyEventCalendar';
 import BodyHead from './components/BodyHead';
-import NavCards from './components/NavCards';
+import NavCards from './components/NavCard';
 import BodyAbout from './components/BodyAbout';
 import BodyNews from './components/BodyNews';
 import BodyCTA from './components/BodyCTA';

@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
-import styles from '../../../../styles/components/BodyHead.module.css';
+import styles from './BodyHead.module.css';
 import ServiceIcon from './ServiceIcon';
 import Link from 'next/link'
 
