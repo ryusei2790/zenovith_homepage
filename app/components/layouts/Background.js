@@ -5,9 +5,13 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as dat from 'lil-gui';
 
+type GalaxyBackgroundProps = {
+  onReady?: () => void;
+}
 
-export default function GalaxyBackground() {
-  const containerRef = useRef(null);
+
+export default function GalaxyBackground: React.FC<GalaxyBackgroundProps> = ({ onReady }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     /** サイズ設定 */
@@ -124,6 +128,7 @@ export default function GalaxyBackground() {
     }
 
     /** アニメーション */
+    let called = false;
     const clock = new THREE.Clock();
     const tick = () => {
       const elapsedTime = clock.getElapsedTime();
@@ -132,6 +137,11 @@ export default function GalaxyBackground() {
       camera.lookAt(0, 0, 0);
       controls.update();
       renderer.render(scene, camera);
+      requestAnimationFrame(tick);
+      if (!called && onReady) {
+        onReady();
+        called = true;
+      }
       requestAnimationFrame(tick);
     };
     tick();
@@ -154,7 +164,7 @@ export default function GalaxyBackground() {
       geometry?.dispose();
       material?.dispose();
     };
-  }, []);
+  }, [onReady]);
 
   return <div ref={containerRef} style={{ width: '100vw', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: -1 }} />;
 }

@@ -1,11 +1,17 @@
+import { useEffect, useState } from 'react';
 import Image from "next/image";
 import GalaxyBackground from "./components/layouts/Background";
+import Head from './components/Head/Head'
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  
   return (
     <>
       <GalaxyBackground />
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      <main className="">
+
       </main>
       <footer className="">
       </footer>
