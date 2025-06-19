@@ -15,7 +15,7 @@ const client = createClient({
  * microCMSのWebhookを受け取るAPI Route
  * 記事が作成・更新・削除されたときに呼び出される
  */
-export default async function handler(
+export default async function WebHookNews(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

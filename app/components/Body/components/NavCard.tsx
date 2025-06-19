@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
-import styles from './/NavCards.module.css';
+import styles from './/NavCard.module.css';
 
 const NavCards: React.FC = () => {
   return (
