@@ -1,0 +1,79 @@
+navCards .container {
+    /* 既存のスタイル */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,    /* 上端：完全に透過 */
+        rgba(255, 255, 255, 0.3) 20%, /* 20%の位置：30%の不透明度 */
+        rgba(255, 255, 255, 0.6) 50%, /* 50%の位置：60%の不透明度 */
+        rgba(255, 255, 255, 0.8) 80%, /* 80%の位置：80%の不透明度 */
+        rgba(255, 255, 255, 1) 100%   /* 下端：完全に白 */
+    );
+}
+
+
+.cardsGrid {
+    width: fit-content;
+    height: 100%;
+    margin: 4rem auto;
+    border-radius: 20px;
+    background-color: hsl(var(--white));
+    box-shadow: 0 8px 32px hsl(var(--shadow));
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 2rem;
+}
+
+.navCard {
+    background-color: #fff; /* 白背景（hsl(var(--white))でもOK） */
+    border-radius: 20px;    /* 角丸（変数でもOK） */
+    box-shadow: 0 8px 32px hsl(var(--shadow));
+    padding: 2rem;          /* 余白（変数でもOK） */
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 220px;       /* カードの最小幅（必要に応じて） */
+    flex: 1 1 0;            /* 横並び時に均等に広がる */
+    align-items: flex-start; /* 中身を左寄せ（お好みで） */
+    will-change: transform, box-shadow;
+    transition: 
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.navCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px hsl(var(--shadow));
+}
+
+.navCard h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: hsl(var(--primary-blue));
+    margin-bottom: var(--spacing-sm);
+}
+
+.navCard p {
+    color: hsl(var(--text-medium));
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.cardLink {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    font-size: var(--font-size-2xl);
+    color: hsl(var(--primary-blue));
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.cardLink:hover {
+    transform: translateX(4px);
+}
