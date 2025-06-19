@@ -7,10 +7,9 @@ import * as dat from 'lil-gui';
 
 type GalaxyBackgroundProps = {
   onReady?: () => void;
-}
+};
 
-
-export default function GalaxyBackground: React.FC<GalaxyBackgroundProps> = ({ onReady }) => {
+export default function GalaxyBackground({ onReady }: GalaxyBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -137,7 +136,6 @@ export default function GalaxyBackground: React.FC<GalaxyBackgroundProps> = ({ o
       camera.lookAt(0, 0, 0);
       controls.update();
       renderer.render(scene, camera);
-      requestAnimationFrame(tick);
       if (!called && onReady) {
         onReady();
         called = true;

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import GalaxyBackground from "./components/layouts/Background";
 import Head from './components/Head/Head'
+import Body from './components/Body/Body'
+import Foot from './components/Foot/Foot'
 
 
 export default function Home() {
@@ -25,7 +27,9 @@ export default function Home() {
       )}
       <GalaxyBackground onReady={handleGalaxyReady} />
       <main className="">
-
+        <Head />
+        <Body />
+        <Foot />
       </main>
       <footer className="">
       </footer>
