@@ -9,7 +9,7 @@ type MenuListProps = {
 };
 
 const MenuList: React.FC<MenuListProps> = ({ href, value }) => {
-  return <li><a href={href}>{value}</a></li>;
+  return <li className={styles.navList}><a href={href} className={styles.menuLink}>{value}</a></li>;
 };
 
 export default MenuList;

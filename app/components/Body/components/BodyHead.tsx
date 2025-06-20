@@ -9,6 +9,20 @@ type BodyHeadProps = {
   images: string[];
 };
 
+
+
+const images = [
+  '/images/sliding-image1.png',
+  '/images/sliding-image2.png',
+  '/images/sliding-image3.png',
+  '/images/sliding-image4.png',
+  '/images/sliding-image5.png',
+  '/images/sliding-image6.png',
+];
+
+
+
+
 const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
   const [index, setIndex] = useState<number>(0);
   const total = images.length;

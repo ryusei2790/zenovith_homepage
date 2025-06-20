@@ -29,9 +29,9 @@ const Header: React.FC = () => {
             {/* <div className={styles.loginButton}>
               <Link href="/login"><span></span></Link>
             </div> */}
-            <div className={styles.searchButton}>
+            {/* <div className={styles.searchButton}>
               <SearchButton />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
