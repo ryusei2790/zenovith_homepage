@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from 'microcms-js-sdk';
 import fs from 'fs/promises';
 import path from 'path';
+import { NextResponse } from 'next/server';
 
 // microCMSクライアントの初期化
 const client = createClient({
@@ -19,7 +20,7 @@ export default async function WebHookNews(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // POSTリクエストのみ許可
+  
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
@@ -67,4 +68,5 @@ export default async function WebHookNews(
     console.error('Error in webhook handler:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
-} 
+}
+

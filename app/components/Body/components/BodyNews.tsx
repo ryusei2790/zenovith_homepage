@@ -33,7 +33,7 @@ const BodyNews: React.FC = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('/api/WebHookNews');
+        const response = await fetch('/api/news');
         if (!response.ok) {
           throw new Error('Failed to fetch news');
         }
