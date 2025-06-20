@@ -39,8 +39,15 @@ const Footer = () => {
                     <Image src="/images/logo.png" alt="Zenovith" width={100} height={100} />
                 </div>
                 <div className={styles.Us}>
-                    <MemberRollupWrapper name="久保 晶幹" role="代表" image="/images/masaki.png" description=" " />
-                    <Link href="/AboutUs"><span>活動紹介</span></Link>
+                    <div className={styles.members}>
+                        <MemberRollupWrapper name="久保 晶幹" role="代表" image="/images/masaki.png" description=" " />
+                        <MemberRollupWrapper name="秋葉" role="代表" image="/images/masaki.png" description=" " />
+                        <MemberRollupWrapper name="中村" role="代表" image="/images/masaki.png" description=" " />
+                        <MemberRollupWrapper name="上田" role="代表" image="/images/masaki.png" description=" " />
+                    </div>
+                    <div className={styles.explain}>
+                        <Link href="/AboutUs"><span>活動紹介</span></Link>
+                    </div>
                 </div>
             </div>
             <div className={styles.footerBottom}>
