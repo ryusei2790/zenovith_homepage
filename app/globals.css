@@ -23,6 +23,12 @@
   }
 }
 
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 header {
   position: fixed;
   background-color: transparent;
@@ -80,7 +86,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
