@@ -14,7 +14,7 @@ const ServiceIcon: React.FC<ServiceIconProps> = ({ image, title, link }) => {
   return (
     <Link href={link}>
       <div className={styles.imageContainer}>
-        <Image src={image} width={20} height={20} alt={title} className={styles.image} />
+            <Image src={image} width={20} height={20} alt={title} className={styles.image} /> 
         <p>{title}</p>
       </div>
     </Link>

@@ -11,16 +11,14 @@ type BodyHeadProps = {
 
 
 
-const images = [
-  '/images/sliding-image1.png',
-  '/images/sliding-image2.png',
-  '/images/sliding-image3.png',
-  '/images/sliding-image4.png',
-  '/images/sliding-image5.png',
-  '/images/sliding-image6.png',
-];
-
-
+// const images = [
+//   '/images/sliding-image1.png',
+//   '/images/sliding-image2.png',
+//   '/images/sliding-image3.png',
+//   '/images/sliding-image4.png',
+//   '/images/sliding-image5.png',
+//   '/images/sliding-image6.png',
+// ];
 
 
 const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
@@ -88,7 +86,8 @@ const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
       </div>
       <div className={styles.back}>
         <div className={styles.serviceIcons}>
-          <ServiceIcon title="" link="#" image="" />
+          <ServiceIcon image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />
+          <ServiceIcon image="/images/OpenSpace.png" title="OpenSpace!" link="/OpenSpace"  />
         </div>
       </div>
     </div>

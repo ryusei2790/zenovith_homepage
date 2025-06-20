@@ -16,41 +16,37 @@ const Footer = () => {
                 </div>
                 <div className={styles.footerSocial}>
                     <a href="#" className={styles.socialLink}>
-                        <img src="/facebook.png" alt="Facebook" className={styles.socialIcon} />
+                        <Image src="/images/facebook.png" alt="Facebook" className={styles.socialIcon} width={100} height={100} />
                     </a>
                     <a href="#" className={styles.socialLink}>
-                        <img src="/X.png" alt="X" className={styles.socialIcon} />
+                        <Image src="/images/X.png" alt="X" className={styles.socialIcon} width={100} height={100} />
                     </a>
                     <a href="#" className={styles.socialLink}>
-                        <img src="/youtube_social_icon_red.png" alt="Youtube" className={styles.socialIcon} />
+                        <Image src="/images/Instagram.png" alt="Instagram" className={styles.socialIcon} width={100} height={100} />
                     </a>
                     <a href="#" className={styles.socialLink}>
-                        <img src="/Instagram_Glyph_Gradient.png" alt="Instagram" className={styles.socialIcon} />
-                    </a>
-                    <a href="#" className={styles.socialLink}>
-                        <img src="/LINE.png" alt="LINE" className={styles.socialIcon} />
+                        <Image src="/images/LINE.png" alt="LINE" className={styles.socialIcon} width={100} height={100} />
                     </a>
                 </div>
             </div>
                 <div className={styles.socialButton}>
-                    <Link href="#" ><span>質問はこちらから</span></Link>
+                    <Link href="/AboutUs" ><span>質問はこちらから</span></Link>
                 </div>
             </div>
             <div className={styles.lastContainer}>
                 <div className={styles.title}>
-                <Image src="/logo.png" alt="Zenovith" width={100} height={100} />
+                    <Image src="/images/logo.png" alt="Zenovith" width={100} height={100} />
                 <h2>Zenovith</h2> 
                     {/* <p> </p> */}
                 </div>
-                <div className={styles.loginButton}>
-                    <Link href="/login"><span></span></Link>
-                </div>
+                {/* <div className={styles.loginButton}>
+                    <Link href=""><span></span></Link> 
+                </div> */}
                 <ul>
-                    <li><Link href="#"><span></span></Link></li>
-                    <li><Link href="#"><span></span></Link>
-                    <Link href="#">組織・役員</Link>
-                    </li>
-                    <li><Link href="#"><span>活動紹介</span></Link>  </li>
+                    {/* <li><Link href="#"><span></span></Link></li>
+                    <li><Link href="#"><span></span></Link></li> */}
+                    <li><Link href="#contact">組織・メンバー</Link></li>
+                    <li><Link href="/AboutUs"><span>活動紹介</span></Link></li>
                     {/* <ul>
                         <li>
                             <Link href="#"></Link>
@@ -69,7 +65,7 @@ const Footer = () => {
                         </li>
                     </ul> */}
                     {/* <li><Link href="#"><span></span></Link></li> */}
-                    <li><Link href="#"><span>お問い合わせ</span></Link></li>
+                    {/* <li><Link href=""><span>お問い合わせ</span></Link></li> */}
                     {/* <li><Link href="#"><span></span></Link></li> */}
                 </ul>
             </div>

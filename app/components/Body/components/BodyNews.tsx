@@ -136,7 +136,7 @@ const BodyNews: React.FC = () => {
             </div>
           </article>
         ))}
-        <Link href="#">
+        <Link href="/news">
           <span>もっと見たい方はこちら・・・</span>
         </Link>
       </div>

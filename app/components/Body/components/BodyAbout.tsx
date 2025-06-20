@@ -8,10 +8,10 @@ const BodyAbout: React.FC = () => (
   <div>
     <div className={styles.aboutContent}>
       <div className={styles.aboutTitle}>
-        <Index h2="Zenovith" description=" " button="view more・・・" link="#" />
+        <Index h2="Zenovith" description="" button="view more・・・" link="/AboutUs" />
       </div>
       <div className={styles.aboutLinks} >
-        <AboutContent name=""/>
+        <AboutContent name="About Zenovith"/>
       </div>
     </div>
   </div>

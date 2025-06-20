@@ -8,16 +8,16 @@ const NavCards: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.cardsGrid}>
         <div className={styles.navCard}>
-          <h2>はじめての方</h2>
-          <p>東京都倫理法人会について詳しく知りたい方はこちら</p>
-          <Link href="" className={styles.cardLink}>
+          <h2>Zenovith</h2>
+          <p>私たちの取り組み</p>
+          <Link href="/AboutUs" className={styles.cardLink}>
             →
           </Link>
         </div>
         <div className={styles.navCard}>
-          <h2>会員の方</h2>
-          <p>会員専用サービスやお知らせはこちら</p>
-          <Link href="" className={styles.cardLink}>
+          <h2>OpenSpace</h2>
+          <p>誰でも楽しく</p>
+          <Link href="/OpenSpace" className={styles.cardLink}>
             →
           </Link>
         </div>
