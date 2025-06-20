@@ -27,31 +27,28 @@ navCards .container {
 }
 
 .navCard {
-    background-color: #fff; /* 白背景（hsl(var(--white))でもOK） */
+    height: 100px;
+    width: 200px;
+    background: transparent; /* 白背景（hsl(var(--white))でもOK） */
     border-radius: 20px;    /* 角丸（変数でもOK） */
-    box-shadow: 0 8px 32px hsl(var(--shadow));
     padding: 2rem;          /* 余白（変数でもOK） */
-    transition: box-shadow 0.2s, transform 0.2s;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    min-width: 220px;       /* カードの最小幅（必要に応じて） */
+    gap: 1rem;       /* カードの最小幅（必要に応じて） */
     flex: 1 1 0;            /* 横並び時に均等に広がる */
-    align-items: flex-start; /* 中身を左寄せ（お好みで） */
-    will-change: transform, box-shadow;
-    transition: 
-    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    align-items: center; /* 中身を左寄せ（お好みで） */
+    text-align: center;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
 .navCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 48px hsl(var(--shadow));
+    transform: translateY(-8px) scale(1.2);
+    transition: transform 0.3s;
 }
 
-.navCard h2 {
+/* .navCard h2 {
     font-size: var(--font-size-2xl);
     font-weight: 600;
     color: hsl(var(--primary-blue));
@@ -62,9 +59,9 @@ navCards .container {
     color: hsl(var(--text-medium));
     line-height: 1.6;
     flex-grow: 1;
-}
+} */
 
-.cardLink {
+/* .cardLink {
     position: absolute;
     top: var(--spacing-lg);
     right: var(--spacing-lg);
@@ -76,4 +73,5 @@ navCards .container {
 
 .cardLink:hover {
     transform: translateX(4px);
-}
+} */
+

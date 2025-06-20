@@ -1,8 +1,9 @@
 "use client"
 import React from 'react';
 import styles from './Foot.module.css';
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
+import MemberRollupWrapper from './Components/MemberRollupWrapper';
 
 const Footer = () => {
   return (
@@ -36,38 +37,11 @@ const Footer = () => {
             <div className={styles.lastContainer}>
                 <div className={styles.title}>
                     <Image src="/images/logo.png" alt="Zenovith" width={100} height={100} />
-                <h2>Zenovith</h2> 
-                    {/* <p> </p> */}
                 </div>
-                {/* <div className={styles.loginButton}>
-                    <Link href=""><span></span></Link> 
-                </div> */}
-                <ul>
-                    {/* <li><Link href="#"><span></span></Link></li>
-                    <li><Link href="#"><span></span></Link></li> */}
-                    <li><Link href="#contact">組織・メンバー</Link></li>
-                    <li><Link href="/AboutUs"><span>活動紹介</span></Link></li>
-                    {/* <ul>
-                        <li>
-                            <Link href="#"></Link>
-                        </li>
-                        <li>
-                        <Link href="#"></Link>
-                        </li>
-                        <li>
-                        <Link href="#"></Link>
-                        </li>
-                        <li>
-                        <Link href="#"></Link>
-                        </li>
-                        <li>
-                        <Link href="#"></Link>
-                        </li>
-                    </ul> */}
-                    {/* <li><Link href="#"><span></span></Link></li> */}
-                    {/* <li><Link href=""><span>お問い合わせ</span></Link></li> */}
-                    {/* <li><Link href="#"><span></span></Link></li> */}
-                </ul>
+                <div className={styles.Us}>
+                    <MemberRollupWrapper name="久保 晶幹" role="代表" image="/images/masaki.png" description=" " />
+                    <Link href="/AboutUs"><span>活動紹介</span></Link>
+                </div>
             </div>
             <div className={styles.footerBottom}>
              <p className={styles.copyright}>© 2025 Zenovith. All rights reserved.</p>
