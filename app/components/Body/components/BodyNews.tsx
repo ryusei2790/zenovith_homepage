@@ -20,12 +20,12 @@ async function fetchNewsArticles(): Promise<Article[]> {
 }
 
 // ニュース記事とスピーカーの型定義
-// type Speaker = {
-//   image: string;
-//   name: string;
-//   position: string;
-//   company: string;
-// };
+type Speaker = {
+  image: string;
+  name: string;
+  position: string;
+  company: string;
+};
 
 type Article = {
   id: string | number;
@@ -37,7 +37,7 @@ type Article = {
   formattedTime: string;
   formattedEndTime: string;
   location: string;
-  // speakers?: Speaker[];
+  speakers?: Speaker[];
 };
 
 const BodyNews: React.FC = () => {
