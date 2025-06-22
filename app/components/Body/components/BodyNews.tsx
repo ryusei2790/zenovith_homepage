@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './BodyNews.module.css';
 
 // api/newsから記事データを取得する関数
-async function fetchNewsArticles(): Promise<any[]> {
+async function fetchNewsArticles(): Promise<Article[]> {
   try {
     const response = await fetch('/api/news');
     if (!response.ok) {
@@ -20,12 +20,12 @@ async function fetchNewsArticles(): Promise<any[]> {
 }
 
 // ニュース記事とスピーカーの型定義
-type Speaker = {
-  image: string;
-  name: string;
-  position: string;
-  company: string;
-};
+// type Speaker = {
+//   image: string;
+//   name: string;
+//   position: string;
+//   company: string;
+// };
 
 type Article = {
   id: string | number;

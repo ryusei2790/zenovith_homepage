@@ -5,14 +5,14 @@ import styles from './Head.module.css';
 import SearchButton from '../elements/SearchButton';
 import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const Header: React.FC = () => {
   // 型を仮定（必要に応じて修正してください）
   const [showMenu, open, setOpen]: [boolean, boolean, React.Dispatch<React.SetStateAction<boolean>>] = useScrollHamburgerMenu();
 
   return (
-    <header className={styles.header}>
+    <header>
       {/* ハンバーガーメニュー（スクロール時に右上に表示） */}
       <div className={styles.container}>
         <div className={styles.headerContent}>
@@ -25,14 +25,14 @@ const Header: React.FC = () => {
           <div className={styles.navMenu}>
             <NavMenu />
           </div>
-          <div className={styles.headerActions}>
+          {/* <div className={styles.headerActions}>
             {/* <div className={styles.loginButton}>
               <Link href="/login"><span></span></Link>
             </div> */}
             {/* <div className={styles.searchButton}>
               <SearchButton />
-            </div> */}
-          </div>
+            </div> 
+          </div> */}
         </div>
       </div>
     </header>

@@ -71,7 +71,7 @@ export async function GET() {
     // 最大8件だけ返す
     const articles = Array.isArray(data.articles) ? data.articles.slice(0, 8) : [];
     return NextResponse.json(articles);
-  } catch (error) {
+  } catch {
     // 失敗した場合はローカルのnews.jsonを返す
     try {
       const data = await fs.readFile(filePath, 'utf-8');

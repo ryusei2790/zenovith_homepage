@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import styles from './BodyCTA.module.css';
-import Link from 'next/link';
 
 const BodyCTA: React.FC = () => (
   <div className={styles.container}>
@@ -10,9 +9,6 @@ const BodyCTA: React.FC = () => (
       <p className={styles.ctaDescription}>
       </p>
     </div>
-    {/* <Link href="#" className={styles.ctaButton}>
-      <span></span>
-    </Link> */}
   </div>
 );
 

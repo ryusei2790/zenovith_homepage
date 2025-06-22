@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './BodyHead.module.css';
 import ServiceIcon from './ServiceIcon';
-import Link from 'next/link'
+// import Link from 'next/link'
 
 type BodyHeadProps = {
   images: string[];
@@ -43,7 +43,7 @@ const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [index, total]);
+  }, [index, total, update]);
 
   // 表示する3枚の画像のインデックスを計算
   const getVisibleImages = (): number[] => {
