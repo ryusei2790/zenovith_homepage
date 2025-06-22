@@ -24,8 +24,10 @@ const useEvents = () => {
         }
         const data = await response.json();
         // timeプロパティがなければ空文字列で補完
-        setEvents(data.map((event: any) => ({
-          ...event,
+        setEvents(data.map((event: Partial<Event>) => ({
+          id: event.id ?? '',
+          title: event.title ?? '',
+          date: event.date ?? '',
           time: event.time ?? '',
         })));
       } catch (err: unknown) {
