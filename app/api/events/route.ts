@@ -7,7 +7,7 @@ export async function GET() {
   try {
     const data = await fs.readFile(filePath, 'utf-8');
     return NextResponse.json(JSON.parse(data));
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'イベントデータの取得に失敗しました' }, { status: 500 });
   }
 }
