@@ -5,6 +5,7 @@ export type Event = {
   id: string;
   title: string;
   date: string;
+  time: string;
   // 必要に応じて他のプロパティを追加
 };
 
@@ -22,7 +23,11 @@ const useEvents = () => {
           throw new Error('イベントの取得に失敗しました');
         }
         const data = await response.json();
-        setEvents(data);
+        // timeプロパティがなければ空文字列で補完
+        setEvents(data.map((event: any) => ({
+          ...event,
+          time: event.time ?? '',
+        })));
       } catch (err: unknown) {
         setError(err instanceof Error ? err.message : 'An unknown error occurred');
       } finally {
