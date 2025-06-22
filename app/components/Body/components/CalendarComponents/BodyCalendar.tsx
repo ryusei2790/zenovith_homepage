@@ -10,6 +10,7 @@ import styles from './BodyCalendar.module.css';
 type EventType = {
   title: string;
   date: string;
+  time: string;
   // 他に必要なプロパティがあれば追加
 };
 
