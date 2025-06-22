@@ -18,18 +18,15 @@ type BodyCalendarProps = {
   events: EventType[];
 };
 
-// FullCalendarのコールバック引数型を独自定義
+// FullCalendarのコールバック引数型を型安全に定義
 interface DateClickInfo {
   dateStr: string;
-  [key: string]: any;
 }
 interface EventClickInfo {
   event: { title: string };
-  [key: string]: any;
 }
 interface DateSelectInfo {
   startStr: string;
-  [key: string]: any;
 }
 
 const BodyCalendar: React.FC<BodyCalendarProps> = ({ onDateSelect, events }) => {
