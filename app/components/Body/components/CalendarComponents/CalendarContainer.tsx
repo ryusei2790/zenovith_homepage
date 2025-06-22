@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BodyCalendar from './BodyCalendar';
 import BodyNavCalendar from './BodyNavCalendar';
 import useEvents from './useEvents';
+
 // import styles from './BodyEventCalendar.module.css';
 
 // 日付やイベントの型は必要に応じて修正してください
@@ -27,7 +28,7 @@ const CalendarContainer: React.FC = () => {
   }
 
   return (
-    <div className={styles.Container}>
+    <div >
       <BodyCalendar
         events={events}
         onDateSelect={handleDateSelect}

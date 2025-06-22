@@ -21,4 +21,4 @@ const Member: React.FC<MemberProps> = ({ name, role, image, description }) => {
   );
 };
 
-export default Member; 
+export default Member;

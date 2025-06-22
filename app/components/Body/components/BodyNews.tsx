@@ -4,6 +4,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './BodyNews.module.css';
 
+// api/newsから記事データを取得する関数
+async function fetchNewsArticles(): Promise<any[]> {
+  try {
+    const response = await fetch('/api/news');
+    if (!response.ok) {
+      throw new Error('Failed to fetch news');
+    }
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error('ニュース記事の取得に失敗しました:', err);
+    throw err;
+  }
+}
+
 // ニュース記事とスピーカーの型定義
 type Speaker = {
   image: string;
@@ -22,32 +37,20 @@ type Article = {
   formattedTime: string;
   formattedEndTime: string;
   location: string;
-  speakers?: Speaker[];
+  // speakers?: Speaker[];
 };
 
 const BodyNews: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch('/api/news');
-        if (!response.ok) {
-          throw new Error('Failed to fetch news');
-        }
-        const data = await response.json();
-        setArticles(data);
-      } catch (err: any) {
-        console.error('ニュース記事の取得に失敗しました:', err);
-        setError('ニュース記事の読み込み中にエラーが発生しました。');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchArticles();
+    fetchNewsArticles()
+      .then(data => setArticles(data))
+      .catch(() => setError('ニュース記事の読み込み中にエラーが発生しました。'))
+      .finally(() => setIsLoading(false));
   }, []);
 
   if (isLoading) {
@@ -87,7 +90,7 @@ const BodyNews: React.FC = () => {
         {articles.map((article) => (
           <article key={article.id} className={styles.newsItem}>
             <div className={styles.card}>
-              <Link href={article.url} className={styles.newsLink}>
+              <a href={article.url} className={styles.newsLink}>
                 <Image
                   src={article.image}
                   alt={article.title}
@@ -95,7 +98,7 @@ const BodyNews: React.FC = () => {
                   height={200}
                   className={styles.newsImage}
                 />
-              </Link>
+              </a>
             </div>
             <div className={styles.newsText}>
               <div className={styles.newsContent}>
@@ -103,9 +106,9 @@ const BodyNews: React.FC = () => {
                   {article.formattedDate}
                 </time>
                 <h3 className={styles.newsTitle}>
-                  <Link href={article.url}>
+                  <a href={article.url}>
                     {article.title}
-                  </Link>
+                  </a>
                 </h3>
                 <div className={styles.newsDetails}>
                   <p className={styles.newsTime}>

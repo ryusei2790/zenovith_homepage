@@ -23,7 +23,7 @@ export default function Home() {
     <>
       {isLoading && (
         <div className={`splash=screen${fadeOut ? ' fade-out': ''}`}>
-          <img src="/images_load_background.png" alt="Loading..." style={{ width: '100vw', height: '100vh', objectFit: 'cover' }} />
+          <img src="/images/logo.png" alt="Loading..." style={{ width: '100vw', height: '100vh', objectFit: 'cover' }} />
         </div>
       )}
       <GalaxyBackground onReady={handleGalaxyReady} />
