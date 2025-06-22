@@ -18,21 +18,35 @@ type BodyCalendarProps = {
   events: EventType[];
 };
 
+// FullCalendarのコールバック引数型を独自定義
+interface DateClickInfo {
+  dateStr: string;
+  [key: string]: any;
+}
+interface EventClickInfo {
+  event: { title: string };
+  [key: string]: any;
+}
+interface DateSelectInfo {
+  startStr: string;
+  [key: string]: any;
+}
+
 const BodyCalendar: React.FC<BodyCalendarProps> = ({ onDateSelect, events }) => {
   const ref = useRef<FullCalendar | null>(null);
 
   // イベントクリック時のハンドラー
-  const handleClick = (info: any) => {
+  const handleClick = (info: EventClickInfo) => {
     console.log('Event clicked:', info.event.title);
   };
 
   // 日付範囲選択時のハンドラー
-  const handleSelect = (info: any) => {
+  const handleSelect = (info: DateSelectInfo) => {
     console.log('Date selected:', info.startStr);
   };
 
   // 日付クリック時のハンドラー
-  const handleDateClick = (info: any) => {
+  const handleDateClick = (info: DateClickInfo) => {
     onDateSelect(info.dateStr);
   };
 
