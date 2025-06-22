@@ -7,19 +7,6 @@ import interactionPlugin from "@fullcalendar/interaction"
 import styles from './BodyCalendar.module.css';
 import { Event } from './useEvents';
 
-// イベントの型を定義（必要に応じて拡張してください）
-type EventType = {
-  title: string;
-  date: string;
-  time: string;
-  // 他に必要なプロパティがあれば追加
-};
-
-type BodyCalendarProps = {
-  onDateSelect: (date: string) => void;
-  events: Event[];
-};
-
 // FullCalendarのコールバック引数型を型安全に定義
 interface DateClickInfo {
   dateStr: string;
@@ -30,6 +17,11 @@ interface EventClickInfo {
 interface DateSelectInfo {
   startStr: string;
 }
+
+type BodyCalendarProps = {
+  onDateSelect: (date: string) => void;
+  events: Event[];
+};
 
 const BodyCalendar: React.FC<BodyCalendarProps> = ({ onDateSelect, events }) => {
   const ref = useRef<FullCalendar | null>(null);
@@ -78,7 +70,7 @@ const BodyCalendar: React.FC<BodyCalendarProps> = ({ onDateSelect, events }) => 
         eventClick={handleClick}
         select={handleSelect}
         dateClick={handleDateClick}
-        events={events.map(event => ({
+        events={events.map((event: Event) => ({
           title: event.title,
           date: event.date,
           display: 'background',
