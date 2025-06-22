@@ -2,15 +2,12 @@
 import React from 'react';
 import NavMenu from  '../elements/NavMenu'
 import styles from './Head.module.css';
-import SearchButton from '../elements/SearchButton';
-import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
+// import SearchButton from '../elements/SearchButton';
+// import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
 import Image from 'next/image';
 // import Link from 'next/link';
 
 const Header: React.FC = () => {
-  // 型を仮定（必要に応じて修正してください）
-  const [showMenu, open, setOpen]: [boolean, boolean, React.Dispatch<React.SetStateAction<boolean>>] = useScrollHamburgerMenu();
-
   return (
     <header>
       {/* ハンバーガーメニュー（スクロール時に右上に表示） */}

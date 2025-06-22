@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './BodyHead.module.css';
 import ServiceIcon from './ServiceIcon';
@@ -27,23 +27,23 @@ const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // スライドを更新
-  const update = (newIndex: number) => {
-    setIndex((newIndex + total) % total);
-  };
+  const update = useCallback(() => {
+    setIndex((index + 1) % total);
+  }, [index, total]);
 
   // ボタンイベント
-  const handlePrev = () => update(index - 1);
-  const handleNext = () => update(index + 1);
+  const handlePrev = () => setIndex((index - 1 + total) % total);
+  const handleNext = () => setIndex((index + 1) % total);
 
   // 自動スライド
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      update(index + 1);
+      update();
     }, 5000);
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [index, total, update]);
+  }, [update]);
 
   // 表示する3枚の画像のインデックスを計算
   const getVisibleImages = (): number[] => {

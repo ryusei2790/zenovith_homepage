@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from "next/image";
 import GalaxyBackground from "./components/layouts/Background";
 import Head from './components/Head/Head'

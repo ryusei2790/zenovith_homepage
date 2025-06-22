@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 
 // イベントの型を定義（必要に応じて修正してください）
-type EventType = {
-  // 例: id: number; title: string; date: string; など
-  [key: string]: any;
+export type Event = {
+  id: string;
+  title: string;
+  date: string;
+  // 必要に応じて他のプロパティを追加
 };
 
 const useEvents = () => {
-  const [events, setEvents] = useState<EventType[]>([]);
+  const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
