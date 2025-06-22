@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import FullCalendar, { DateClickArg, EventClickArg, DateSelectArg } from "@fullcalendar/react";
+// import FullCalendar, { DateClickArg, EventClickArg, DateSelectArg } from "@fullcalendar/react";
+import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from '@fullcalendar/timegrid'
 import dayGridPlugin from "@fullcalendar/daygrid"
 import interactionPlugin from "@fullcalendar/interaction"
@@ -21,17 +22,17 @@ const BodyCalendar: React.FC<BodyCalendarProps> = ({ onDateSelect, events }) => 
   const ref = useRef<FullCalendar | null>(null);
 
   // イベントクリック時のハンドラー
-  const handleClick = (info: EventClickArg) => {
+  const handleClick = (info: any) => {
     console.log('Event clicked:', info.event.title);
   };
 
   // 日付範囲選択時のハンドラー
-  const handleSelect = (info: DateSelectArg) => {
+  const handleSelect = (info: any) => {
     console.log('Date selected:', info.startStr);
   };
 
   // 日付クリック時のハンドラー
-  const handleDateClick = (info: DateClickArg) => {
+  const handleDateClick = (info: any) => {
     onDateSelect(info.dateStr);
   };
 
