@@ -1,17 +1,10 @@
 import React from 'react';
 import styles from './BodyNavCalendar.module.css';
-
-// イベントの型を定義（必要に応じて修正してください）
-type EventType = {
-  date: string;
-  time: string;
-  title: string;
-  // 他に必要なプロパティがあれば追加
-};
+import { Event } from './useEvents';
 
 type BodyNavCalendarProps = {
   selectedDate: string | null;
-  events: EventType[];
+  events: Event[];
 };
 
 const BodyNavCalendar: React.FC<BodyNavCalendarProps> = ({ selectedDate, events }) => {
