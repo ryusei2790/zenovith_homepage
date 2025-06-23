@@ -48,38 +48,48 @@ const client = createClient({
 // GETリクエストでmicroCMSから記事を取得し、news.jsonに保存し、最大8件の記事データを返すAPI Route
 export async function GET() {
   const filePath = path.join(process.cwd(), 'news.json');
+  
+  // microCMSの設定が存在する場合のみmicroCMSを使用
+  const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
+  const apiKey = process.env.MICROCMS_API_KEY;
+  
+  if (serviceDomain && apiKey) {
+    try {
+      // microCMSから記事を取得
+      const response = await client.get({
+        endpoint: 'blogs',
+        queries: {
+          fields: ['id', 'title', 'content', 'date', 'time', 'endTime', 'category'],
+          orders: '-date',
+          limit: 8,
+        },
+      });
+
+      // 保存するデータ構造
+      const data = {
+        articles: response.contents,
+        updatedAt: new Date().toISOString(),
+      };
+
+      // news.jsonに保存
+      await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
+
+      // 最大8件だけ返す
+      const articles = Array.isArray(data.articles) ? data.articles.slice(0, 8) : [];
+      return NextResponse.json(articles);
+    } catch (error) {
+      console.error('microCMS取得エラー:', error);
+      // microCMSが失敗した場合はローカルのnews.jsonを返す
+    }
+  }
+  
+  // microCMSの設定がない場合、またはmicroCMSが失敗した場合はローカルのnews.jsonを返す
   try {
-    // microCMSから記事を取得
-    const response = await client.get({
-      endpoint: 'blogs',
-      queries: {
-        fields: ['id', 'title', 'content', 'date', 'time', 'endTime', 'category'],
-        orders: '-date',
-        limit: 8,
-      },
-    });
-
-    // 保存するデータ構造
-    const data = {
-      articles: response.contents,
-      updatedAt: new Date().toISOString(),
-    };
-
-    // news.jsonに保存
-    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
-
-    // 最大8件だけ返す
-    const articles = Array.isArray(data.articles) ? data.articles.slice(0, 8) : [];
+    const data = await fs.readFile(filePath, 'utf-8');
+    const json = JSON.parse(data);
+    const articles = Array.isArray(json.articles) ? json.articles.slice(0, 8) : [];
     return NextResponse.json(articles);
   } catch {
-    // 失敗した場合はローカルのnews.jsonを返す
-    try {
-      const data = await fs.readFile(filePath, 'utf-8');
-      const json = JSON.parse(data);
-      const articles = Array.isArray(json.articles) ? json.articles.slice(0, 8) : [];
-      return NextResponse.json(articles);
-    } catch {
-      return NextResponse.json({ error: 'ニュースデータの取得に失敗しました' }, { status: 500 });
-    }
+    return NextResponse.json({ error: 'ニュースデータの取得に失敗しました' }, { status: 500 });
   }
 }
