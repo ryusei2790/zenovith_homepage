@@ -5,12 +5,6 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 import { createClient } from 'microcms-js-sdk';
 
-// microCMS クライアントを初期化
-const client = createClient({
-  serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN || '',
-  apiKey: process.env.MICROCMS_API_KEY || '',
-});
-
 /**
  * microCMSから記事を取得してnews.jsonに保存する関数
  */
@@ -55,6 +49,12 @@ export async function GET() {
   
   if (serviceDomain && apiKey) {
     try {
+      // microCMS クライアントを初期化
+      const client = createClient({
+        serviceDomain,
+        apiKey,
+      });
+
       // microCMSから記事を取得
       const response = await client.get({
         endpoint: 'blogs',
