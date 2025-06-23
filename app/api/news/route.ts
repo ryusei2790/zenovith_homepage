@@ -54,11 +54,6 @@ export async function GET() {
   const apiKey = process.env.MICROCMS_API_KEY;
   
   if (serviceDomain && apiKey) {
-     // microCMSの設定が存在する場合のみmicroCMSを使用Add commentMore actions
-  const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
-  const apiKey = process.env.MICROCMS_API_KEY;
-  
-  if (serviceDomain && apiKey) {
     try {
       // microCMSから記事を取得
       const response = await client.get({
@@ -71,24 +66,25 @@ export async function GET() {
       });
 
       // 保存するデータ構造
-      // 保存するデータ構造Add commentMore actions
       const data = {
         articles: response.contents,
         updatedAt: new Date().toISOString(),
       };
 
-        // news.jsonに保存
+      // news.jsonに保存
       await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
 
       // 最大8件だけ返す
       const articles = Array.isArray(data.articles) ? data.articles.slice(0, 8) : [];
-    return NextResponse.json(articles);
-  } catch (error) {Add commentMore actions
-    console.error('microCMS取得エラー:', error);
-    // microCMSが失敗した場合はローカルのnews.jsonを返す
+      return NextResponse.json(articles);
+    } catch (error) {
+      console.error('microCMS取得エラー:', error);
+      // microCMSが失敗した場合はローカルのnews.jsonを返す
+    }
   }
-   // microCMSの設定がない場合、またはmicroCMSが失敗した場合はローカルのnews.jsonを返すAdd commentMore actions
-   try {
+  
+  // microCMSの設定がない場合、またはmicroCMSが失敗した場合はローカルのnews.jsonを返す
+  try {
     const data = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(data);
     const articles = Array.isArray(json.articles) ? json.articles.slice(0, 8) : [];
@@ -97,5 +93,4 @@ export async function GET() {
     return NextResponse.json({ error: 'ニュースデータの取得に失敗しました' }, { status: 500 });
   }
 }
-  }}
   
