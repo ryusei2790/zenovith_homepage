@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import BodyCalendar from './BodyCalendar';
 import BodyNavCalendar from './BodyNavCalendar';

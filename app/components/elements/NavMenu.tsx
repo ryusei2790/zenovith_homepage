@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import styles from './NavMenu.module.css';
 import MenuList from './MenuList';

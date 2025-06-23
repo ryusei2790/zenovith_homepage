@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef } from 'react';
 // import FullCalendar, { DateClickArg, EventClickArg, DateSelectArg } from "@fullcalendar/react";
 import FullCalendar from "@fullcalendar/react";

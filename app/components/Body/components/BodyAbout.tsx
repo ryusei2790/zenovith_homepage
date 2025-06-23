@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import styles from './BodyAbout.module.css';
 import Index from './AboutUs/Index'

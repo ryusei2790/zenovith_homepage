@@ -1,4 +1,3 @@
-"use client"
 import React from 'react';
 import styles from './BodyEventCalendar.module.css';
 import CalendarContainer from './CalendarComponents/CalendarContainer';

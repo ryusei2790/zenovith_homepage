@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from 'react';
 
 // イベントの型を定義（必要に応じて修正してください）
