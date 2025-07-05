@@ -1,11 +1,9 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import styles from './Body.module.css';
-import BodyEventCalendar from './components/BodyEventCalendar';
 import BodyHead from './components/BodyHead';
-import NavCards from './components/NavCard';
+// import NavCards from './components/NavCard';
 import BodyAbout from './components/BodyAbout';
-import BodyNews from './components/BodyNews';
 import BodyCTA from './components/BodyCTA';
 import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
 import HamburgerNavMenu from '../elements/Hamburger/HamburgerMenu';
@@ -86,17 +84,17 @@ const Body: React.FC = () => {
           </div>
         </section>
 
-        <section className={styles.calendarSection} id="calendar">
+        {/* <section className={styles.calendarSection} id="calendar">
           <div className={styles.container}>
             <div className={styles.calendarRow}>
               <BodyEventCalendar />
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className={styles.navCards} id="services">
+        {/* <section className={styles.navCards} id="services">
           <NavCards />
-        </section>
+        </section> */}
 
         <section className={styles.about} id="about">
           <div className={styles.container}>
@@ -104,9 +102,9 @@ const Body: React.FC = () => {
           </div>
         </section>
 
-        <section className={styles.news} id="news">
+        {/* <section className={styles.news} id="news">
           <BodyNews />
-        </section>
+        </section> */}
 
         <section className={styles.cta} id="contact">
           <BodyCTA />
