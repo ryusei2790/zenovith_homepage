@@ -1,22 +1,23 @@
-import './AboutUs.module.css';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import BackToHomeButton from "../components/elements/BackToHomeButton";
+import Image from "next/image";
 
 export const metadata = {
-  title: 'NONDA',
-  description: 'NONDA Application',
+  title: 'AboutUs',
+  description: 'AboutUsページ',
 }
 
-export default function AboutUsPage() {
+const AboutUsPage: React.FC = () => {
   return (
-    <div>
-      <header className="header">
-        <nav>
-          <Link href="/">Home</Link>
-        </nav>
-      </header>
-      <footer className="footer">
-        <p>&copy; 2025 Zenovith</p>
-      </footer>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+      <h1 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>AboutUsページ（雛形）</h1>
+      <p style={{ marginBottom: "2rem" }}>ここにAboutUsの内容や説明を追加してください。</p>
+      <BackToHomeButton />
+      <a href="/AboutUs" target="_blank" rel="noopener noreferrer">
+      </a>
     </div>
-  )
-}
+  );
+};
+
+export default AboutUsPage;
