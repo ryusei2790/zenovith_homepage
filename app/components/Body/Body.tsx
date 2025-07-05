@@ -9,13 +9,44 @@ import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
 import HamburgerNavMenu from '../elements/Hamburger/HamburgerMenu';
 import HamburgerSearchButton from '../elements/Hamburger/HamburgerSearchButton';
 
-const images = [//ゆくゆくはどこかで投稿した画像ここで取得したpropsで渡すようにする
-  '/images/sliding-image1.png',
-  '/images/sliding-image2.png',
-  '/images/sliding-image3.png',
-  '/images/sliding-image4.png',
-  '/images/sliding-image5.png',
-  '/images/sliding-image6.png',
+// 画像データの型定義
+interface ImageData {
+  src: string;
+  link: string;
+  alt: string;
+}
+
+const images: ImageData[] = [
+  {
+    src: '/images/sliding-image1.png',
+    link: '/',
+    alt: 'US'
+  },
+  {
+    src: '/images/sliding-image2.png',
+    link: '/IT',
+    alt: 'ITHomepage'
+  },
+  {
+    src: '/images/sliding-image3.png',
+    link: '/hobbylink',
+    alt: 'hobbylink'
+  },
+  {
+    src: '/images/sliding-image4.png',
+    link: '/IT',
+    alt: 'ITProduct'
+  },
+  {
+    src: '/images/sliding-image5.png',
+    link: '/BLUESNSSUPPORT',
+    alt: 'SNS支援'
+  },
+  {
+    src: '/images/sliding-image6.png',
+    link: '/AboutUs',
+    alt: 'AboutUs'
+  },
 ];
 
 const Body: React.FC = () => {

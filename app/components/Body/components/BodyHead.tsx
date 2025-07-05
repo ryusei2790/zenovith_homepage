@@ -3,23 +3,18 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './BodyHead.module.css';
 import ServiceIcon from './ServiceIcon';
-// import Link from 'next/link'
+import Link from 'next/link'
+
+// 画像データの型定義
+interface ImageData {
+  src: string;
+  link: string;
+  alt: string;
+}
 
 type BodyHeadProps = {
-  images: string[];
+  images: ImageData[];
 };
-
-
-
-// const images = [
-//   '/images/sliding-image1.png',
-//   '/images/sliding-image2.png',
-//   '/images/sliding-image3.png',
-//   '/images/sliding-image4.png',
-//   '/images/sliding-image5.png',
-//   '/images/sliding-image6.png',
-// ];
-
 
 const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
   const [index, setIndex] = useState<number>(0);
@@ -69,14 +64,16 @@ const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
                       : 'translateX(-150%)',
                 }}
               >
-                <Image
-                  className={styles.img}
-                  src={images[imageIndex]}
-                  alt={`Slide ${imageIndex + 1}`}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  priority={i === 1}
-                />
+                <Link href={images[imageIndex].link}>
+                  <Image
+                    className={styles.img}
+                    src={images[imageIndex].src}
+                    alt={images[imageIndex].alt}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    priority={i === 1}
+                  />
+                </Link>
               </div>
             ))}
           </div>
