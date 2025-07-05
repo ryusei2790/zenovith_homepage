@@ -1,12 +1,8 @@
 "use client";
 import React from "react";
 import BackToHomeButton from "../components/elements/BackToHomeButton";
-import Image from "next/image";
+// import Image from "next/image";
 
-export const metadata = {
-  title: 'AboutUs',
-  description: 'AboutUsページ',
-}
 
 const AboutUsPage: React.FC = () => {
   return (
