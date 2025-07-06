@@ -49,7 +49,7 @@ canvas {
 }
 
 header {
-  position: fixed;
+  /* position: fixed; */
   background-color: transparent;
   z-index: 10000;
 }
