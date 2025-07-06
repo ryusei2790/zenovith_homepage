@@ -1,3 +1,8 @@
+.container {
+  width: 100vw;
+  height: 90vh;
+}
+
 .imageContainer p {
     font-size: 0.8rem;
   }

@@ -1,148 +1,117 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
+"use client";
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import styles from './Body.module.css';
+
+import BodyMain from './components/BodyMain';
 import BodyHead from './components/BodyHead';
-// import NavCards from './components/NavCard';
 import BodyAbout from './components/BodyAbout';
+import ServiceIcon from './components/ServiceIcon';
+import BodyNews from './components/BodyNews';
 import BodyCTA from './components/BodyCTA';
-import useScrollHamburgerMenu from "../elements/hooks/useScrollHamburgerMenu";
-import HamburgerNavMenu from '../elements/Hamburger/HamburgerMenu';
-import HamburgerSearchButton from '../elements/Hamburger/HamburgerSearchButton';
+import NavCard from './components/NavCard';
+import Foot from '../Foot/Foot';
 
 // 画像データの型定義
 interface ImageData {
-  src: string;
-  link: string;
-  alt: string;
+    src: string;
+    link: string;
+    alt: string;
 }
 
 const images: ImageData[] = [
-  {
-    src: '/images/sliding-image1.png',
-    link: '/',
-    alt: 'US'
-  },
-  {
-    src: '/images/sliding-image2.png',
-    link: '/IT',
-    alt: 'ITHomepage'
-  },
-  {
-    src: '/images/sliding-image3.png',
-    link: '/hobbylink',
-    alt: 'hobbylink'
-  },
-  {
-    src: '/images/sliding-image4.png',
-    link: '/IT',
-    alt: 'ITProduct'
-  },
-  {
-    src: '/images/sliding-image5.png',
-    link: '/BLUESNSSUPPORT',
-    alt: 'SNS支援'
-  },
-  {
-    src: '/images/sliding-image6.png',
-    link: '/AboutUs',
-    alt: 'AboutUs'
-  },
+    {
+      src: '/images/sliding-image1.png',
+      link: '/',
+      alt: 'US'
+    },
+    {
+      src: '/images/sliding-image2.png',
+      link: '/IT',
+      alt: 'ITHomepage'
+    },
+    {
+      src: '/images/sliding-image3.png',
+      link: '/hobbylink',
+      alt: 'hobbylink'
+    },
+    {
+      src: '/images/sliding-image4.png',
+      link: '/IT',
+      alt: 'ITProduct'
+    },
+    {
+      src: '/images/sliding-image5.png',
+      link: '/BLUESNSSUPPORT',
+      alt: 'SNS支援'
+    },
+    {
+      src: '/images/sliding-image6.png',
+      link: '/AboutUs',
+      alt: 'AboutUs'
+    },
 ];
 
-const Body: React.FC = () => {
-  // カレンダー
-  // const [selectedDate, setSelectedDate] = useState(null);
-  // const [events, setEvents] = useState([
-  //   { date: '2024-03-15', time: '10:00', title: '経営者モーニングセミナー' },
-  //   { date: '2024-03-20', time: '14:00', title: '企業倫理研修会' },
-  //   { date: '2024-03-25', time: '15:30', title: '支部会議' }
-  // ]);
+export default function Body() {
+    const pages = [
+        <BodyMain key="main" />, 
+        <BodyHead key="head" images={images}/>, 
+        <BodyAbout key="about" />, 
+        <ServiceIcon key="service" image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />, 
+        <BodyNews key="news" />, 
+        <BodyCTA key="cta" />, 
+        <NavCard key="navcard" />, 
+        <Foot key="foot"/>
+    ];
+    const [currentPage, setCurrentPage] = useState(0);
+    const isScrolling = useRef(false);
 
-  // const handleDateSelect = (date) => {
-  //   setSelectedDate(date);
-  // };
+    const handleWheel = useCallback(
+        (event: WheelEvent) => {
+            if (isScrolling.current) return;
+            isScrolling.current = true;
 
-  // ハンバーガーメニュー
-  const [showMenu, open, setOpen] = useScrollHamburgerMenu();
-  const menuRef = useRef<HTMLDivElement>(null);
+            if (event.deltaY > 0) {
+                setCurrentPage((prev) => prev < pages.length - 1 ? prev + 1 : prev);
+            } else if (event.deltaY < 0) {
+                setCurrentPage((prev) => prev > 0 ? prev - 1 : prev);
+            }
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        open &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
+            setTimeout(() => {
+                isScrolling.current = false;
+            }, 800);
+        },
+        [pages.length]
+    );
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [open, setOpen]);
+    useEffect(() => {
+        window.addEventListener("wheel", handleWheel, { passive: false });
+        return () => {
+            window.removeEventListener("wheel", handleWheel);
+        };
+    }, [handleWheel]);
 
-  return (
-    <>
-      {showMenu && (
-        <div className={styles.hamburgerMenu} ref={menuRef}>
-          <button
-            className={styles.hamburgerIcon}
-            onClick={() => setOpen(!open)}
-            aria-label="メニューを開く"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-          {open && (
-            <div className={styles.menuContent}>
-              <div className={styles.HamburgersearchButton}>
-                <HamburgerSearchButton />
-              </div>
-              <div className={styles.HamburgerNavMenu}>
-                <HamburgerNavMenu />
-              </div>
+    return (
+        <div
+            style={{
+                width: "100vw",
+                height: "100vh",
+                overflow: "hidden",
+                position: "relative"
+            }}
+        >
+            <div
+                style={{
+                    height: `${pages.length * 1000}vh`,
+                    transform: `translateY(-${currentPage * 1000}vh)` ,
+                    transition: "transform 0.7s cubic-bezier(0.77,0,0.175,1)",
+                }}
+            >
+                {pages.map((page, idx) => (
+                    <div key={idx} style={{ height: "100vh" }}>
+                        {page}
+                    </div>
+                ))}
             </div>
-          )}
         </div>
-      )}
-      <main className={styles.main}>
-        <section className={styles.hero} id="home">
-          <div className={styles.container}>
-            <BodyHead images={images} />
-          </div>
-        </section>
-
-        {/* <section className={styles.calendarSection} id="calendar">
-          <div className={styles.container}>
-            <div className={styles.calendarRow}>
-              <BodyEventCalendar />
-            </div>
-          </div>
-        </section> */}
-
-        {/* <section className={styles.navCards} id="services">
-          <NavCards />
-        </section> */}
-
-        <section className={styles.about} id="about">
-          <div className={styles.container}>
-            <BodyAbout />
-          </div>
-        </section>
-
-        {/* <section className={styles.news} id="news">
-          <BodyNews />
-        </section> */}
-
-        <section className={styles.cta} id="contact">
-          <BodyCTA />
-        </section>
-      </main>
-    </>
-  );
-};
-
-export default Body; 
+    );
+}

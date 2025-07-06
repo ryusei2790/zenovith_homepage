@@ -3,7 +3,7 @@ import styles from './Foot.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Footer = () => {
+const Foot = () => {
   return (
     <>
         <footer className={styles.footer}>
@@ -51,4 +51,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Foot; 

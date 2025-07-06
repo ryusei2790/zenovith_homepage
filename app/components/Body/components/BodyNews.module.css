@@ -1,3 +1,8 @@
+.container {
+  width: 100vw;
+  height: 90vh;
+}
+
 .news {
     padding: var(--spacing-3xl) 0;
     background-color: hsl(var(--background));
