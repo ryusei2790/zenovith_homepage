@@ -135,7 +135,7 @@ export default function Body({ onPageChange }: BodyProps) {
                 }}
             >
                 {pages.map((page, idx) => (
-                    <div key={idx} style={{ height: "100vh" }}>
+                    <div key={idx} id={`section-${idx}`} style={{ height: "100vh" }}>
                         {page}
                     </div>
                 ))}

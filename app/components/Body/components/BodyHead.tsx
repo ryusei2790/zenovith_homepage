@@ -2,7 +2,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './BodyHead.module.css';
-import ServiceIcon from './ServiceIcon';
 import Link from 'next/link'
 
 // 画像データの型定義

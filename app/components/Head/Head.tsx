@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import { usePathname } from 'next/navigation';
 import NavMenu from  '../elements/NavMenu'
 import styles from './Head.module.css';
 // import SearchButton from '../elements/SearchButton';
