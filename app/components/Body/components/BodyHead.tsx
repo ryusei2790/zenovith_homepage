@@ -81,12 +81,6 @@ const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
           <button className={styles.next} onClick={handleNext}>›</button>
         </div>
       </div>
-      <div className={styles.back}>
-        <div className={styles.serviceIcons}>
-          <ServiceIcon image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />
-          <ServiceIcon image="/images/OpenSpace.png" title="OpenSpace!" link="/OpenSpace"  />
-        </div>
-      </div>
     </div>
   );
 };

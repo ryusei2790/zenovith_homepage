@@ -6,10 +6,11 @@ import BodyMain from './components/BodyMain';
 import BodyHead from './components/BodyHead';
 import BodyAbout from './components/BodyAbout';
 import ServiceIcon from './components/ServiceIcon';
-import BodyNews from './components/BodyNews';
+// import BodyNews from './components/BodyNews';一旦なしで後で頑張って作る
 import BodyCTA from './components/BodyCTA';
 import NavCard from './components/NavCard';
 import Foot from '../Foot/Foot';
+
 
 // 画像データの型定義
 interface ImageData {
@@ -57,31 +58,51 @@ export default function Body() {
         <BodyHead key="head" images={images}/>, 
         <BodyAbout key="about" />, 
         <ServiceIcon key="service" image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />, 
-        <BodyNews key="news" />, 
+        // <BodyNews key="news" />, 
         <BodyCTA key="cta" />, 
         <NavCard key="navcard" />, 
         <Foot key="foot"/>
     ];
     const [currentPage, setCurrentPage] = useState(0);
-    // 
-    const isScrollingRef = useRef(false);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    const goToPage = useCallback((pageIndex: number) => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentPage(pageIndex);
+        
+        setTimeout(() => {
+            setIsAnimating(false);
+        }, 1000); // アニメーション完了まで待機
+    }, [isAnimating]);
 
     const handleWheel = useCallback(
         (event: WheelEvent) => {
-            if (isScrollingRef.current) return;
-            isScrollingRef.current = true;
+            event.preventDefault();
+            
+            if (isAnimating) return;
+
+            // スクロール方向を判定（閾値を設定）
+            const scrollThreshold = 50; // この値以上でスクロールと判定
+            
+            if (Math.abs(event.deltaY) < scrollThreshold) return;
 
             if (event.deltaY > 0) {
-                setCurrentPage((prev) => prev < pages.length - 1 ? prev + 1 : prev);
+                // 下にスクロール → 次のページへ
+                const nextPage = Math.min(currentPage + 1, pages.length - 1);
+                if (nextPage !== currentPage) {
+                    goToPage(nextPage);
+                }
             } else if (event.deltaY < 0) {
-                setCurrentPage((prev) => prev > 0 ? prev - 1 : prev);
+                // 上にスクロール → 前のページへ
+                const prevPage = Math.max(currentPage - 1, 0);
+                if (prevPage !== currentPage) {
+                    goToPage(prevPage);
+                }
             }
-
-            setTimeout(() => {
-                isScrollingRef.current = false;
-            }, 2000);
         },
-        [pages.length]
+        [currentPage, pages.length, isAnimating, goToPage]
     );
 
     useEffect(() => {
@@ -93,14 +114,28 @@ export default function Body() {
 
     return (
         <div
+            ref={scrollContainerRef}
             style={{
                 width: "100vw",
                 height: "100vh",
                 overflow: "hidden",
                 position: "relative"
             }}
+            className={styles.pages}
         >
-            {pages[currentPage]}
+            <div
+                style={{
+                    height: `${pages.length * 100}vh`,
+                    transform: `translateY(-${currentPage * 100}vh)`,
+                    transition: "transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                }}
+            >
+                {pages.map((page, idx) => (
+                    <div key={idx} style={{ height: "100vh" }}>
+                        {page}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
