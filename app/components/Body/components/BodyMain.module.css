@@ -1,4 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap');
 .container {
     width: 100vh;
     height: 90vh;
+}
+
+.zenovithHeadImage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90vw;
+  height: 90vh;
+  z-index: 50;
+}
+
+.zenovithMainDescription {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+    width: 50vw;
+    height: 50vh;
+    z-index: 500;
 }

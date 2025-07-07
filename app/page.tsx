@@ -8,6 +8,7 @@ import Body from "./components/Body/Body";
 export default function Home() {
   const [fadeOut, setFadeOut] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(0);
   const router = useRouter();
 
   useEffect(() => {
@@ -38,8 +39,8 @@ export default function Home() {
       )}
 
       <main>
-        <Head />
-        <Body />
+        <Head currentPage={currentPage} />
+        <Body onPageChange={setCurrentPage} />
       </main>
 
       <footer></footer>

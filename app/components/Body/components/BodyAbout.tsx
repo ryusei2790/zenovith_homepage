@@ -4,7 +4,7 @@ import Index from './AboutUs/Index'
 import AboutContent from './AboutUs/AboutContent'
 
 const BodyAbout: React.FC = () => (
-  <div>
+  <div className={styles.container}>
     <div className={styles.aboutContent}>
       <div className={styles.aboutTitle}>
         <div className={styles.zenovth}>

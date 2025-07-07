@@ -11,12 +11,15 @@ import BodyCTA from './components/BodyCTA';
 import NavCard from './components/NavCard';
 import Foot from '../Foot/Foot';
 
-
 // 画像データの型定義
 interface ImageData {
     src: string;
     link: string;
     alt: string;
+}
+
+interface BodyProps {
+  onPageChange: (page: number) => void;
 }
 
 const images: ImageData[] = [
@@ -52,7 +55,7 @@ const images: ImageData[] = [
     },
 ];
 
-export default function Body() {
+export default function Body({ onPageChange }: BodyProps) {
     const pages = [
         <BodyMain key="main" />, 
         <BodyHead key="head" images={images}/>, 
@@ -61,7 +64,7 @@ export default function Body() {
         // <BodyNews key="news" />, 
         <BodyCTA key="cta" />, 
         <NavCard key="navcard" />, 
-        <Foot key="foot"/>
+        <Foot key="foot"/>,
     ];
     const [currentPage, setCurrentPage] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -71,11 +74,12 @@ export default function Body() {
         if (isAnimating) return;
         setIsAnimating(true);
         setCurrentPage(pageIndex);
+        onPageChange(pageIndex); // 親コンポーネントに通知
         
         setTimeout(() => {
             setIsAnimating(false);
         }, 1000); // アニメーション完了まで待機
-    }, [isAnimating]);
+    }, [isAnimating, onPageChange]);
 
     const handleWheel = useCallback(
         (event: WheelEvent) => {
@@ -119,7 +123,7 @@ export default function Body() {
                 width: "100vw",
                 height: "100vh",
                 overflow: "hidden",
-                position: "relative"
+                position: "relative",
             }}
             className={styles.pages}
         >
