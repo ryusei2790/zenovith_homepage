@@ -63,12 +63,13 @@ export default function Body() {
         <Foot key="foot"/>
     ];
     const [currentPage, setCurrentPage] = useState(0);
-    const isScrolling = useRef(false);
+    // 
+    const isScrollingRef = useRef(false);
 
     const handleWheel = useCallback(
         (event: WheelEvent) => {
-            if (isScrolling.current) return;
-            isScrolling.current = true;
+            if (isScrollingRef.current) return;
+            isScrollingRef.current = true;
 
             if (event.deltaY > 0) {
                 setCurrentPage((prev) => prev < pages.length - 1 ? prev + 1 : prev);
@@ -77,8 +78,8 @@ export default function Body() {
             }
 
             setTimeout(() => {
-                isScrolling.current = false;
-            }, 800);
+                isScrollingRef.current = false;
+            }, 2000);
         },
         [pages.length]
     );
@@ -99,19 +100,7 @@ export default function Body() {
                 position: "relative"
             }}
         >
-            <div
-                style={{
-                    height: `${pages.length * 1000}vh`,
-                    transform: `translateY(-${currentPage * 1000}vh)` ,
-                    transition: "transform 0.7s cubic-bezier(0.77,0,0.175,1)",
-                }}
-            >
-                {pages.map((page, idx) => (
-                    <div key={idx} style={{ height: "100vh" }}>
-                        {page}
-                    </div>
-                ))}
-            </div>
+            {pages[currentPage]}
         </div>
     );
 }
