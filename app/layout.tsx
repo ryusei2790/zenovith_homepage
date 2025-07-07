@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zenovith Homepage",
-  description: "Zenovithの公式ホームページです。",
+  title: "Zenovith",
+  description: "常識を越え、幸せを加速させる会社",
   keywords: ["Zenovith", "ホームページ", "ポートフォリオ", "ブログ運営", "SNS運営", "アプリ制作", "テクノロジー", "イノベーション", "システム制作", "デザイン", "design", "development", "system", "blog", "sns", "app", "technology", "innovation"],
   authors: [{ name: "Zenovith" }],
   creator: "Zenovith",
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://zenovith.com"),
   openGraph: {
     title: "Zenovith Homepage",
-    description: "Zenovithの公式ホームページです。",
+    description: "常識を越え、幸せを加速させる会社",
     url: "https://zenovith.com",
-    siteName: "Zenovith Homepage",
+    siteName: "Zenovith",
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zenovith Homepage",
-    description: "Zenovithの公式ホームページです。",
+    title: "Zenovith",
+    description: "常識を越え、幸せを加速させる会社",
   },
   robots: {
     index: true,
