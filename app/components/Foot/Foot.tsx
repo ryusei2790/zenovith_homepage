@@ -2,9 +2,8 @@ import React from 'react';
 import styles from './Foot.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import MemberRollupWrapper from './Components/MemberRollupWrapper';
 
-const Footer = () => {
+const Foot = () => {
   return (
     <>
         <footer className={styles.footer}>
@@ -41,12 +40,6 @@ const Footer = () => {
                     <div className={styles.socialButton}>
                         <Link href="/AboutUs"><span>活動紹介</span></Link>
                     </div>
-                    <div className={styles.members}>
-                        <MemberRollupWrapper name="久保 晶幹" role="代表" image="/images/masaki.jpg" description=" " />
-                        <MemberRollupWrapper name="秋葉 壮太" role=" " image="/images/sota.JPG" description=" " />
-                        <MemberRollupWrapper name="中村 優真" role=" " image="/images/yuma.jpg" description=" " />
-                        <MemberRollupWrapper name="上田 琉聖" role="エンジニア" image="/images/ryusei.JPG" description=" " />
-                    </div>
                 </div>
             </div>
             <div className={styles.footerBottom}>
@@ -58,4 +51,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Foot; 

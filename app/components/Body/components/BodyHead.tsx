@@ -2,7 +2,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import styles from './BodyHead.module.css';
-import ServiceIcon from './ServiceIcon';
 import Link from 'next/link'
 
 // 画像データの型定義
@@ -79,12 +78,6 @@ const BodyHead: React.FC<BodyHeadProps> = ({ images }) => {
           </div>
           <button className={styles.prev} onClick={handlePrev}>‹</button>
           <button className={styles.next} onClick={handleNext}>›</button>
-        </div>
-      </div>
-      <div className={styles.back}>
-        <div className={styles.serviceIcons}>
-          <ServiceIcon image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />
-          <ServiceIcon image="/images/OpenSpace.png" title="OpenSpace!" link="/OpenSpace"  />
         </div>
       </div>
     </div>

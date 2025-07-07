@@ -1,15 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Head from "./components/Head/Head";
 import Body from "./components/Body/Body";
-import Foot from "./components/Foot/Foot";
 
 export default function Home() {
   const [fadeOut, setFadeOut] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  // const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     // スプラッシュスクリーンを3秒後にフェードアウト
@@ -39,9 +38,8 @@ export default function Home() {
       )}
 
       <main>
-        <Head />
-        <Body />
-        <Foot />
+        <Head currentPage={currentPage} />
+        <Body onPageChange={setCurrentPage} />
       </main>
 
       <footer></footer>

@@ -1,4 +1,6 @@
-navCards .container {
+.container {
+    width: 100vw;
+    height: 90vh;
     /* 既存のスタイル */
     background: linear-gradient(
         to bottom,

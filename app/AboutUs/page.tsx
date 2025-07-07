@@ -1,17 +1,18 @@
 "use client";
 import React from "react";
-import BackToHomeButton from "../components/elements/BackToHomeButton";
-// import Image from "next/image";
+import MemberRollupWrapper from "./MemberRollupWrapper";
 
 
 const AboutUsPage: React.FC = () => {
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>AboutUsページ（雛形）</h1>
-      <p style={{ marginBottom: "2rem" }}>ここにAboutUsの内容や説明を追加してください。</p>
-      <BackToHomeButton />
-      <a href="/AboutUs" target="_blank" rel="noopener noreferrer">
-      </a>
+    <div>
+      
+      <div>
+        <MemberRollupWrapper name="久保 晶幹" role="代表" image="/images/masaki.jpg" description=" " />
+        <MemberRollupWrapper name="秋葉 壮太" role=" " image="/images/sota.JPG" description=" " />
+        <MemberRollupWrapper name="中村 優真" role=" " image="/images/yuma.jpg" description=" " />
+        <MemberRollupWrapper name="上田 琉聖" role="エンジニア" image="/images/ryusei.JPG" description=" " />
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import NavMenu from  '../elements/NavMenu'
 import styles from './Head.module.css';
@@ -6,7 +7,12 @@ import styles from './Head.module.css';
 import Image from 'next/image';
 // import Link from 'next/link';
 
-const Header: React.FC = () => {
+interface HeadProps {
+  currentPage: number;
+}
+
+const Head: React.FC<HeadProps> = ({ currentPage }) => {
+  
   return (
     <header>
       {/* ハンバーガーメニュー（スクロール時に右上に表示） */}
@@ -19,7 +25,7 @@ const Header: React.FC = () => {
             <span className={styles.logoText}>Zenovith</span>
           </div>
           <div className={styles.navMenu}>
-            <NavMenu />
+            <NavMenu currentPage={currentPage} />
           </div>
           {/* <div className={styles.headerActions}>
             {/* <div className={styles.loginButton}>
@@ -35,4 +41,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header; 
+export default Head; 
