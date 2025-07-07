@@ -8,7 +8,7 @@ import Body from "./components/Body/Body";
 export default function Home() {
   const [fadeOut, setFadeOut] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     // スプラッシュスクリーンを3秒後にフェードアウト
