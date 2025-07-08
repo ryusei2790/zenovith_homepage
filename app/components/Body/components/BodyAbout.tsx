@@ -5,6 +5,25 @@ import AboutContent from './AboutUs/AboutContent'
 
 const BodyAbout: React.FC = () => (
   <div className={styles.container}>
+    <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        // style={{
+        //   position: "relative",
+        //   top: 0,
+        //   right: 0,
+        //   width: "100vw",
+        //   height: "100vh",
+        //   objectFit: "cover",
+        //   zIndex: -1,
+        //   pointerEvents: "none",
+        // }}
+        className={styles.backgroundVideo}
+      > 
+        <source src="/videos/masaki.mp4" type="video/mp4" />
+      </video>
     <div className={styles.aboutContent}>
       <div className={styles.aboutTitle}>
         <div className={styles.zenovth}>

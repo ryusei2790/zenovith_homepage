@@ -20,7 +20,7 @@ const BodyMain: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFirstTextVisible(true);
-    }, 3000);
+    }, 7000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -31,7 +31,7 @@ const BodyMain: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsThirdTextVisible(true);
-    }, 7000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
