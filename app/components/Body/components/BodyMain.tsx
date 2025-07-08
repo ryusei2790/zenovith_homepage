@@ -5,24 +5,34 @@ import Image from "next/image";
 
 const BodyMain: React.FC = () => {
   const [isSlidingVisible, setIsSlidingVisible] = useState(false);
-  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isFirstTextVisible, setIsFirstTextVisible] = useState(false);
+  const [isThirdTextVisible, setIsThirdTextVisible] = useState(false);
 
-  // スライディング画像の表示
+  // スライディング画像表示
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsSlidingVisible(true);
     }, 5000);
-
     return () => clearTimeout(timer);
   }, []);
 
-  // テキストの表示（7秒後）
+  // 1つ目テキスト（3秒後）
   useEffect(() => {
-    const textTimer = setTimeout(() => {
-      setIsTextVisible(true);
-    }, 7000);
+    const timer = setTimeout(() => {
+      setIsFirstTextVisible(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
-    return () => clearTimeout(textTimer);
+  // 2つ目テキスト（5秒後）
+  
+
+  // 3つ目テキスト（7秒後）
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsThirdTextVisible(true);
+    }, 7000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -37,31 +47,48 @@ const BodyMain: React.FC = () => {
         priority
       />
 
-      
-      {/* 常識を超えて幸せを加速 テキスト */}
+      {/* 1つ目スローガン */}
       <div
         style={{
           position: 'fixed',
-          top: '10%',
-          left: 0,
+          top: '3%',
+          right: 0,
+          fontSize: '2rem',
+          fontWeight: 'bold',
+          color: 'black',
+          padding: '20px',
+          opacity: isFirstTextVisible ? 1 : 0,
+          transform: isFirstTextVisible ? 'translateX(0)' : 'translateX(-100vw)',
+          transition: 'opacity 1.5s ease-in-out, transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+          zIndex: 20000,
+          fontFamily: "'Noto Serif JP', serif",
+          whiteSpace: 'nowrap',
+        }}
+      >
+        日常をもっと自由に。
+      </div>
+
+      {/* 3つ目テキスト（下から） */}
+      <div
+        style={{
+          position: 'fixed',
+          top: '10%', 
+          left: '0',
           fontSize: '2.5rem',
           fontWeight: 'bold',
           color: 'black',
-          background: 'transparent',
           padding: '20px',
-          textShadow: 'none',
-          opacity: isTextVisible ? 1 : 0.3,
-          transform: isTextVisible ? 'translateX(0)' : 'translateX(-100vw)',
+          opacity: isThirdTextVisible ? 1 : 0.3,
+          transform: isThirdTextVisible ? 'translateY(0)' : 'translateY(100vh)',
           transition: 'opacity 1.5s ease-in-out, transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
           zIndex: 20000,
-          textAlign: 'left',
           fontFamily: "'Noto Serif JP', serif",
           whiteSpace: 'nowrap',
         }}
       >
         常識を超えて幸せを加速
       </div>
-      
+
       {/* 背景動画 */}
       <video
         autoPlay
@@ -81,8 +108,8 @@ const BodyMain: React.FC = () => {
       >
         <source src="/videos/souta.mp4" type="video/mp4" />
       </video>
-      
-      {/* 動画を隠す白い画像（5秒後に右にスライド） */}
+
+      {/* 白いオーバーレイ */}
       <div
         style={{
           position: 'fixed',
@@ -92,7 +119,7 @@ const BodyMain: React.FC = () => {
           height: '80vh',
           backgroundColor: 'white',
           transform: isSlidingVisible ? 'translateX(100%)' : 'translateX(0)',
-          transition: 'transform 2s ',//cubic-bezier(0.25, 0.46, 0.45, 0.94)
+          transition: 'transform 2s',
           zIndex: 10000,
         }}
       />
@@ -101,3 +128,4 @@ const BodyMain: React.FC = () => {
 };
 
 export default BodyMain;
+

@@ -9,9 +9,10 @@ import Image from 'next/image';
 
 interface HeadProps {
   currentPage: number;
+  onSelectPage: (pageIndex: number) => void;
 }
 
-const Head: React.FC<HeadProps> = ({ currentPage }) => {
+const Head: React.FC<HeadProps> = ({ currentPage, onSelectPage }: HeadProps) => {
   
   return (
     <header>
@@ -25,7 +26,7 @@ const Head: React.FC<HeadProps> = ({ currentPage }) => {
             <span className={styles.logoText}>Zenovith</span>
           </div>
           <div className={styles.navMenu}>
-            <NavMenu currentPage={currentPage} />
+            <NavMenu currentPage={currentPage} onSelectPage={onSelectPage}/>
           </div>
           {/* <div className={styles.headerActions}>
             {/* <div className={styles.loginButton}>
