@@ -1,5 +1,4 @@
 "use client";
-import React, { useState, useCallback, useEffect, useRef } from 'react';
 import styles from './Body.module.css';
 
 import BodyMain from './components/BodyMain';
@@ -19,7 +18,7 @@ interface ImageData {
 }
 
 interface BodyProps {
-  onPageChange: (page: number) => void;
+  currentPage: number;
 }
 
 const images: ImageData[] = [
@@ -55,7 +54,7 @@ const images: ImageData[] = [
     },
 ];
 
-export default function Body({ onPageChange }: BodyProps) {
+export default function Body({ currentPage }: BodyProps) {
     const pages = [
         <BodyMain key="main" />, 
         <BodyHead key="head" images={images}/>, 
@@ -66,59 +65,59 @@ export default function Body({ onPageChange }: BodyProps) {
         <NavCard key="navcard" />, 
         <Foot key="foot"/>,
     ];
-    const [currentPage, setCurrentPage] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    // const [currentPage, setCurrentPage] = useState(0);
+    // const [isAnimating, setIsAnimating] = useState(false);
+    // const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-    const goToPage = useCallback((pageIndex: number) => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentPage(pageIndex);
-        onPageChange(pageIndex); // 親コンポーネントに通知
+    // const goToPage = useCallback((pageIndex: number) => {
+    //     if (isAnimating) return;
+    //     setIsAnimating(true);
+    //     setCurrentPage(pageIndex);
+    //     onPageChange(pageIndex); // 親コンポーネントに通知
         
-        setTimeout(() => {
-            setIsAnimating(false);
-        }, 1000); // アニメーション完了まで待機
-    }, [isAnimating, onPageChange]);
+    //     setTimeout(() => {
+    //         setIsAnimating(false);
+    //     }, 1000); // アニメーション完了まで待機
+    // }, [isAnimating, onPageChange]);
 
-    const handleWheel = useCallback(
-        (event: WheelEvent) => {
-            event.preventDefault();
+    // const handleWheel = useCallback(
+    //     (event: WheelEvent) => {
+    //         event.preventDefault();
             
-            if (isAnimating) return;
+    //         if (isAnimating) return;
 
-            // スクロール方向を判定（閾値を設定）
-            const scrollThreshold = 50; // この値以上でスクロールと判定
+    //         // スクロール方向を判定（閾値を設定）
+    //         const scrollThreshold = 50; // この値以上でスクロールと判定
             
-            if (Math.abs(event.deltaY) < scrollThreshold) return;
+    //         if (Math.abs(event.deltaY) < scrollThreshold) return;
 
-            if (event.deltaY > 0) {
-                // 下にスクロール → 次のページへ
-                const nextPage = Math.min(currentPage + 1, pages.length - 1);
-                if (nextPage !== currentPage) {
-                    goToPage(nextPage);
-                }
-            } else if (event.deltaY < 0) {
-                // 上にスクロール → 前のページへ
-                const prevPage = Math.max(currentPage - 1, 0);
-                if (prevPage !== currentPage) {
-                    goToPage(prevPage);
-                }
-            }
-        },
-        [currentPage, pages.length, isAnimating, goToPage]
-    );
+    //         if (event.deltaY > 0) {
+    //             // 下にスクロール → 次のページへ
+    //             const nextPage = Math.min(currentPage + 1, pages.length - 1);
+    //             if (nextPage !== currentPage) {
+    //                 goToPage(nextPage);
+    //             }
+    //         } else if (event.deltaY < 0) {
+    //             // 上にスクロール → 前のページへ
+    //             const prevPage = Math.max(currentPage - 1, 0);
+    //             if (prevPage !== currentPage) {
+    //                 goToPage(prevPage);
+    //             }
+    //         }
+    //     },
+    //     [currentPage, pages.length, isAnimating, goToPage]
+    // );
 
-    useEffect(() => {
-        window.addEventListener("wheel", handleWheel, { passive: false });
-        return () => {
-            window.removeEventListener("wheel", handleWheel);
-        };
-    }, [handleWheel]);
+    // useEffect(() => {
+    //     window.addEventListener("wheel", handleWheel, { passive: false });
+    //     return () => {
+    //         window.removeEventListener("wheel", handleWheel);
+    //     };
+    // }, [handleWheel]);
 
     return (
         <div
-            ref={scrollContainerRef}
+            // ref={scrollContainerRef}
             style={{
                 width: "100vw",
                 height: "100vh",
