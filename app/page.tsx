@@ -30,6 +30,10 @@ export default function Home() {
       setIsAnimating(false);
     }, 1000);
   }, [isAnimating]);
+  
+  const goToPageFirst = useCallback(() => {
+    setCurrentPage(1);
+  }, []);
 
   const handleWheel = useCallback((event: WheelEvent) => {
     event.preventDefault();
@@ -58,12 +62,18 @@ export default function Home() {
     };
   }, [handleWheel]);
 
+  // useEffect(() => {
+  //   const autoPageTimer = setTimeout(() => {
+  //     goToPage(1);
+  //   }, 10000);
+  //   return () => clearTimeout(autoPageTimer);
+  // }, [goToPage]);
+
   useEffect(() => {
     const autoPageTimer = setTimeout(() => {
-      goToPage(1);
+      goToPageFirst();
     }, 10000);
-    return () => clearTimeout(autoPageTimer);
-  }, [goToPage]);
+  }, [goToPageFirst]);
 
   return (
     <>

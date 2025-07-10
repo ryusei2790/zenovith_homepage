@@ -1,3 +1,77 @@
+/* --- レイアウト全体 --- */
+.indexContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* --- タイトル --- */
+.indexTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+/* --- サブタイトル・ビジョン --- */
+.indexVision {
+  font-size: 1.2rem;
+  color: #0070f3;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+/* --- ミッション --- */
+.indexMission {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+}
+
+/* --- サービス説明 --- */
+.indexDescription {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+/* --- ボタン --- */
+.indexButton {
+  display: inline-block;
+  padding: 0.7em 2em;
+  background: #0070f3;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin-top: 1.5rem;
+}
+.indexButton:hover {
+  background: #0051cc;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 600px) {
+  .indexContainer {
+    padding: 1rem 0.5rem;
+  }
+  .indexTitle {
+    font-size: 1.5rem;
+  }
+  .indexVision,
+  .indexMission,
+  .indexDescription {
+    font-size: 0.95rem;
+  }
+}
+
 .aboutDescription {
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-size-lg);

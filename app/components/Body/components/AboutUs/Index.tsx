@@ -17,22 +17,16 @@ type IndexProps = {
 
 const Index: React.FC<IndexProps> = ({ h2, vision, mission, descriptionService, contentsIT, descriptionNewProject, contentsNewProject, button, link }) => {
   return (
-    <>
-      <h2>{h2}</h2>
-      <a href={link} className={styles.aboutbButtonLink}>
-        <button className={styles.aboutButton}>{button}
-          <div className={styles.image}>
-          <Image src="/images/masaki.jpg" alt="代表" className={styles.zenovithImage} width={100} height={100} />
-          </div>
-          <h3>{vision}</h3>
-          <h4>{mission}</h4>
-          <h5>{descriptionService}</h5>
-          <p>{contentsIT}</p>
-          <h5>{descriptionNewProject}</h5>
-          <p>{contentsNewProject}</p>
-        </button>
-      </a>
-    </>
+    <div className={styles.indexContainer}>
+      <h2 className={styles.indexTitle}>{h2}</h2>
+      <div className={styles.indexVision}>{vision}</div>
+      <div className={styles.indexMission}>{mission}</div>
+      <div className={styles.indexDescription}>{descriptionService}</div>
+      <p>{contentsIT}</p>
+      <h5>{descriptionNewProject}</h5>
+      <p>{contentsNewProject}</p>
+      <a href={link} className={styles.indexButton}>{button}</a>
+    </div>
   );
 };
 
