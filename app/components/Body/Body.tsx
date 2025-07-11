@@ -29,17 +29,17 @@ const images: ImageData[] = [
     },
     {
       src: '/images/sliding-image2.png',
-      link: '/IT',
+      link: 'https://mypagefirst.vercel.app/',//自分のホームページに繋げちゃう
       alt: 'ITHomepage'
     },
     {
       src: '/images/sliding-image3.png',
-      link: '/hobbylink',
+      link: '/mywork',
       alt: 'hobbylink'
     },
     {
       src: '/images/sliding-image4.png',
-      link: '/IT',
+      link: 'https://mypagefirst.vercel.app/',//自分のに繋げちゃう
       alt: 'ITProduct'
     },
     {
