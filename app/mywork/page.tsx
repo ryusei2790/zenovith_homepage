@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
+import MyWorkApp from "./MyWorkApp";
 
-const MyWork: React.FC = () => {
+const MyWorkPage: React.FC = () => {
   return (
     <div>
-      <h1>My Work</h1>
-      <p>ここに自分の作品や実績を紹介する内容を追加してください。</p>
+      <MyWorkApp />
     </div>
   );
 };
 
-export default MyWork;
+export default MyWorkPage;
