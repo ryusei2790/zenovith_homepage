@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import BackToHomeButton from "../components/elements/BackToHomeButton";
-import styles from "./page.module.css";
 import Head from "../components/Head/Head";
 
 function SectionContainer({ children }: { children: React.ReactNode }) {
