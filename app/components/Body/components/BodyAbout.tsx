@@ -44,7 +44,7 @@ const BodyAbout: React.FC = () => {
         /> */}
 
         <div className={styles.Zeno}>
-          <p>Zeno</p>
+          <h1>Zeno</h1>
         </div>
         <div className={styles.description}>
           <div className={styles.aboutTitle}>
