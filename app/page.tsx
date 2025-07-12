@@ -67,7 +67,7 @@ export default function Home() {
       goToPage(1);
     }, 10000);
     return () => clearTimeout(autoPageTimer);
-  }, [goToPage]);
+  }, []);
 
   
 
