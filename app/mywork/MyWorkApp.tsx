@@ -26,7 +26,7 @@ function MyWorkBody({ currentPage }: { currentPage: number }) {
     <SectionContainer key="main">
       <h1 style={{ fontSize: "2.2rem", marginBottom: "1.2rem", fontWeight: 700, letterSpacing: '0.05em', textAlign: 'center' }}>HobbyLink ギターレッスン ギターレンタル</h1>
       <p style={{ marginBottom: "2rem", fontSize: '1.1rem', color: '#333', textAlign: 'center' }}>ギターレッスン</p>
-      <a href="https://mypagefirst.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', borderRadius: '50%', overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}>
+      <a href="https://mypage-nu-ten.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', borderRadius: '50%', overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}>
         <Image
           src="/images/ryusei.JPG"
           alt="guitarLesson"
