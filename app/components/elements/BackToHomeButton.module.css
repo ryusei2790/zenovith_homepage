@@ -10,7 +10,7 @@
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
-  box-shadow: 0 2px 12px rgba(247, 151, 30, 0.15);
+  box-shadow: 0 2px 12px rgba(215, 68, 255, 0.15);
   border: none;
   outline: none;
   cursor: pointer;
@@ -21,8 +21,8 @@
 
 .backButton:hover {
   transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 4px 16px rgba(247, 151, 30, 0.22);
-  background: linear-gradient(90deg, #ffd200 0%, #f7971e 100%);
+  box-shadow: 0 4px 16px rgba(255, 87, 202, 0.22);
+  background: linear-gradient(90deg, #e600ff 0%, #874aff 100%);
 }
 
 .backButton:active {

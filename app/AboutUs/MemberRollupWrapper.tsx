@@ -17,7 +17,7 @@ const MemberRollupWrapper: React.FC<Props> = (props) => {
     // 10秒後にロールダウン（表示開始）
     const timer = setTimeout(() => {
       setRolledDown(true);
-    }, 10000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 

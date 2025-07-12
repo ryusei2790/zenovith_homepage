@@ -29,7 +29,7 @@ const images: ImageData[] = [
     },
     {
       src: '/images/sliding-image2.png',
-      link: 'https://mypagefirst.vercel.app/',//自分のホームページに繋げちゃう
+      link: 'https://mypage-nu-ten.vercel.app/',//自分のホームページに繋げちゃう
       alt: 'ITHomepage'
     },
     {
@@ -39,7 +39,7 @@ const images: ImageData[] = [
     },
     {
       src: '/images/sliding-image4.png',
-      link: 'https://mypagefirst.vercel.app/',//自分のに繋げちゃう
+      link: 'https://mypage-nu-ten.vercel.app/',//自分のに繋げちゃう
       alt: 'ITProduct'
     },
     {
