@@ -90,7 +90,7 @@ const BodyMain: React.FC = () => {
       </div>
 
       {/* 背景動画 */}
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -107,7 +107,7 @@ const BodyMain: React.FC = () => {
         }}
       >
         <source src="/videos/souta.mp4" type="video/mp4" />
-      </video>
+      </video> */}
 
       {/* 白いオーバーレイ */}
       <div
