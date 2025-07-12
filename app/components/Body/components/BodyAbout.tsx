@@ -25,7 +25,7 @@ const BodyAbout: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <video
+      {/* <video
           autoPlay
           loop
           muted
@@ -33,7 +33,7 @@ const BodyAbout: React.FC = () => {
           className={styles.backgroundVideo}
         > 
           <source src="/videos/souta.mp4" type="video/mp4" />
-        </video>
+        </video> */}
 
         <div
         className={styles.overlay}
