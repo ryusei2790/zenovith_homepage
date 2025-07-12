@@ -30,6 +30,10 @@ export default function Home() {
       setIsAnimating(false);
     }, 1000);
   }, [isAnimating]);
+  
+  // const goToPageFirst = useCallback(() => {
+  //   setCurrentPage(1);
+  // }, []);
 
   const handleWheel = useCallback((event: WheelEvent) => {
     event.preventDefault();
@@ -64,6 +68,8 @@ export default function Home() {
     }, 10000);
     return () => clearTimeout(autoPageTimer);
   }, [goToPage]);
+
+  
 
   return (
     <>

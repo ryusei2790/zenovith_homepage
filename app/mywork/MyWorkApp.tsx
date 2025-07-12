@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Head from "../components/Head/Head";
+import BodyEventCalendar from "../components/Body/components/BodyEventCalendar";
 
 function SectionContainer({ children }: { children: React.ReactNode }) {
   return (
@@ -36,12 +37,12 @@ function MyWorkBody({ currentPage }: { currentPage: number }) {
       </a>
     </SectionContainer>,
     <SectionContainer key="lesson">
-      <h2 style={{ fontSize: '1.7rem', marginBottom: '1rem', fontWeight: 600 }}>ギターレッスン</h2>
-      <p style={{ fontSize: '1.1rem', color: '#444', textAlign: 'center', maxWidth: 500 }}>ギターレッスンの詳細や実績をここに記載します。</p>
+      <h2 style={{ fontSize: '1.7rem', marginBottom: '1rem', fontWeight: 600 }}></h2>
+      <BodyEventCalendar />
     </SectionContainer>,
     <SectionContainer key="rental">
-      <h2 style={{ fontSize: '1.7rem', marginBottom: '1rem', fontWeight: 600 }}>ギターレンタル</h2>
-      <p style={{ fontSize: '1.1rem', color: '#444', textAlign: 'center', maxWidth: 500 }}>ギターレンタルサービスの内容や実績をここに記載します。</p>
+      <h2 style={{ fontSize: '1.7rem', marginBottom: '1rem', fontWeight: 600 }}>ギターレッスン・ギターレンタル</h2>
+      <p style={{ fontSize: '1.1rem', color: '#444', textAlign: 'center', maxWidth: 500 }}></p>
     </SectionContainer>,
     <SectionContainer key="image">
       <div style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.10)', borderRadius: 16, overflow: 'hidden', background: '#fff', padding: 16 }}>

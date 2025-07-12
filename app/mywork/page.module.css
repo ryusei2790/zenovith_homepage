@@ -1,0 +1,17 @@
+.header {
+    background-color: hsl(var(--white));
+    border-bottom: 1px solid hsl(var(--border-light));
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    background-color: transparent;
+    position: relative;
+    border-radius: 20px;
+}

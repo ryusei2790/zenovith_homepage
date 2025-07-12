@@ -1,44 +1,67 @@
-.aboutDescription {
-    font-family: 'Roboto', sans-serif;
-    font-size: var(--font-size-lg);
-    line-height: 1.8;
-    color: hsl(var(--text-medium));
-    margin-bottom: var(--spacing-3xl);
+/* --- レイアウト全体 --- */
+.indexContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: transparent;
+  border-radius: 16px;
+  color: #fff;
 }
 
-.aboutButton {
-    width: 200px;
-    height: 50px;
-    border-radius: 30px;
-    display: inline-block;
-    background-color: rgba(142, 221, 255, 0.3);
-    color: white;
-    padding: 1em 2em;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    border: none;
-    font-weight: 500;
-  }
+/* --- タイトル --- */
+.indexTitle {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.07em;
+  text-align: center;
+}
 
-  .aboutButton:hover {
-    transform: rotateY(180deg) scale(1.05);
-  }
-  
-  .aboutButton::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0.8em;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 2px;
-    transition: width 0.3s ease;
-  }
-  
-  .aboutButton:hover::after {
-    width: 50%;
-  }
+/* --- サブタイトル・ビジョン --- */
+.indexVision {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* --- ミッション --- */
+.indexMission {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* --- サービス説明 --- */
+.indexDescription {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* --- ボタン --- */
+.indexButton {
+  display: inline-block;
+  padding: 0.7em 2.2em;
+  background: linear-gradient(90deg, #1e5bf7 0%, #86f3df 100%);
+  color: #fff;
+  border-radius: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px rgba(30,91,247,0.10);
+}
+.indexButton:hover {
+  background: linear-gradient(90deg, #86f3df 0%, #1e5bf7 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(30,91,247,0.18);
+}
+

@@ -1,13 +1,31 @@
 .container {
   width: 100vw;
   height: 90vh;
+  position: relative;
+  overflow: hidden;
 }
 
-.imageContainer p {
+
+
+.imageContainer {
+  position: relative;
+  z-index: 1; /* 前面に表示 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 20px;
+  height: 20px;
+}
+
+/* .imageContainer p {
     font-size: 0.8rem;
-  }
+  } */
   
-  .imageContainer {
+  /* .imageContainer {
     left: 50%;
     transform: translateX(-50%);
     flex: 1;
@@ -24,4 +42,4 @@
     
     .image:hover {
       transform: scale(1.05);
-    }
+    } */

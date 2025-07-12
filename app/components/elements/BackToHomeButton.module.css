@@ -1,31 +1,49 @@
 .backButton {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: #0070f3;
-  color: white;
+  gap: 9px;
+  padding: 9px 22px;
+  background: linear-gradient(90deg, #1e5bf7 0%, #86f3df 100%);
+  color: #fff;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  box-shadow: 0 2px 12px rgba(215, 68, 255, 0.15);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s cubic-bezier(.4,2,.3,1), background 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .backButton:hover {
-  background-color: #0051cc;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(255, 87, 202, 0.22);
+  background: linear-gradient(90deg, #e600ff 0%, #874aff 100%);
 }
 
 .backButton:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 .arrowIcon {
-  transition: transform 0.3s ease;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1ec8f7;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
 .backButton:hover .arrowIcon {
-  transform: translateX(-4px);
+  background: #77f4e1;
+  color: #1e75f7;
+  transform: scale(1.08) translateX(3px);
 } 

@@ -4,7 +4,7 @@ import styles from './Body.module.css';
 import BodyMain from './components/BodyMain';
 import BodyHead from './components/BodyHead';
 import BodyAbout from './components/BodyAbout';
-import ServiceIcon from './components/ServiceIcon';
+// import ServiceIcon from './components/ServiceIcon';
 // import BodyNews from './components/BodyNews';一旦なしで後で頑張って作る
 import BodyCTA from './components/BodyCTA';
 import NavCard from './components/NavCard';
@@ -29,7 +29,7 @@ const images: ImageData[] = [
     },
     {
       src: '/images/sliding-image2.png',
-      link: 'https://mypagefirst.vercel.app/',//自分のホームページに繋げちゃう
+      link: 'https://mypage-nu-ten.vercel.app/',//自分のホームページに繋げちゃう
       alt: 'ITHomepage'
     },
     {
@@ -39,7 +39,7 @@ const images: ImageData[] = [
     },
     {
       src: '/images/sliding-image4.png',
-      link: 'https://mypagefirst.vercel.app/',//自分のに繋げちゃう
+      link: 'https://mypage-nu-ten.vercel.app/',//自分のに繋げちゃう
       alt: 'ITProduct'
     },
     {
@@ -59,7 +59,7 @@ export default function Body({ currentPage }: BodyProps) {
         <BodyMain key="main" />, 
         <BodyHead key="head" images={images}/>, 
         <BodyAbout key="about" />, 
-        <ServiceIcon key="service" image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />, 
+        // <ServiceIcon key="service" image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />, 
         // <BodyNews key="news" />, 
         <BodyCTA key="cta" />, 
         <NavCard key="navcard" />, 
