@@ -75,6 +75,13 @@ export default function MyWorkApp() {
 
   const totalPages = 4;
 
+  const myWorkNavItems = [
+    { href: "#main", value: "メイン" },
+    { href: "#lesson", value: "レッスン" },
+    { href: "#rental", value: "レンタル" },
+    { href: "#gallery", value: "ギャラリー" },
+  ];
+
   const goToPage = useCallback((pageIndex: number) => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -112,7 +119,7 @@ export default function MyWorkApp() {
   return (
     <>
         <header>
-            <Head currentPage={currentPage} onSelectPage={goToPage} />
+            <Head currentPage={currentPage} onSelectPage={goToPage} title="My Work" navItems={myWorkNavItems} />
         </header>
       <MyWorkBody currentPage={currentPage} />
     </>

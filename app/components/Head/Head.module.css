@@ -71,6 +71,14 @@
     background: transparent;
 }
 
+.pageTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+    background: transparent;
+    margin-left: 0.5rem;
+}
+
 .navMenu {
     flex: 1;
     display: flex;

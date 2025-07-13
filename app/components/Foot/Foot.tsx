@@ -29,7 +29,7 @@ const Foot = () => {
                 </div>
             </div>
                 <div className={styles.socialButton}>
-                    <Link href="/AboutUs" ><span>質問はこちらから</span></Link>
+                    <a href="mailto:zenovith@gmail.com"><span>質問はこちらから</span></a>
                 </div>
             </div>
             <div className={styles.lastContainer}>
