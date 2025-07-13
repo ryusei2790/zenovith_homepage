@@ -8,6 +8,7 @@
 
 .calendar-header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--spacing-lg);
@@ -85,30 +86,80 @@
 
 .calendarContainer {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+    padding: 2.5rem 1.5rem;
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px rgba(30,91,247,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+.fc {
+    background: transparent;
+    border-radius: 24px;
+    font-family: inherit;
+}
+
+.fc-toolbar-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e5bf7;
+    letter-spacing: 0.04em;
+}
+
+.fc-button {
+    background: linear-gradient(90deg, #1e5bf7 0%, #86f3df 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(30,91,247,0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.fc-button:hover {
+    background: linear-gradient(90deg, #86f3df 0%, #1e5bf7 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(30,91,247,0.12);
+}
+
+.fc-daygrid-day {
+    background: #f7faff;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+.fc-daygrid-day.fc-day-today {
+    background: linear-gradient(90deg, #e3f0ff 0%, #eafffa 100%);
+    border: 2px solid #1e5bf7;
+    box-shadow: 0 2px 8px rgba(30,91,247,0.08);
+}
+.fc-daygrid-day.fc-day-selected {
+    background: #1e5bf7;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(30,91,247,0.10);
+}
+.fc-daygrid-event {
+    background: #86f3df;
+    color: #1e5bf7;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    padding: 2px 8px;
+    margin: 2px 0;
+    box-shadow: 0 1px 4px rgba(30,91,247,0.08);
+    font-size: 0.95rem;
 }
 
-.calendarHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.fc-col-header-cell {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e5bf7;
+    background: transparent;
+    border: none;
 }
 
-.calendarDates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+.fc-scrollgrid {
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.date {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}

@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: row;   /* 横並び */
+  align-items: flex-start;
+  gap: 2.5rem;           /* カレンダーと詳細の間隔 */
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
