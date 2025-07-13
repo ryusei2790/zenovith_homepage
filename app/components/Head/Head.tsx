@@ -9,13 +9,27 @@ import Image from 'next/image';
 import BackToHomeButton from '../elements/BackToHomeButton';
 import { usePathname } from 'next/navigation';
 
+type NavItem = { href: string; value: string };
+
 interface HeadProps {
   currentPage: number;
   onSelectPage: (pageIndex: number) => void;
+  navItems?: NavItem[];
+  title?: string;
 }
 
-const Head: React.FC<HeadProps> = ({ currentPage, onSelectPage }: HeadProps) => {
+const defaultNavItems = [
+  { href: "#home", value: "ホーム" },
+  { href: "#about", value: "AboutUs" },
+  { href: "#services", value: "services" },
+  { href: "#calendar", value: "イベント日程" },
+  { href: "#news", value: "お知らせ" },
+  { href: "#contact", value: "お問い合わせ" },
+];
+
+const Head: React.FC<HeadProps> = ({ navItems, currentPage, onSelectPage, title, ...otherProps }) => {
   const pathname = usePathname();
+  const items = navItems ?? defaultNavItems;
   return (
     <header>
       {/* ハンバーガーメニュー（スクロール時に右上に表示） */}
@@ -26,9 +40,10 @@ const Head: React.FC<HeadProps> = ({ currentPage, onSelectPage }: HeadProps) => 
               <Image src="/images/logo.png" width={10} height={10} alt="Zenovith" />
             </span>
             <span className={styles.logoText}>Zenovith</span>
+            {title && <span className={styles.pageTitle}> | {title}</span>}
           </div>
           <div className={styles.navMenu}>
-            <NavMenu currentPage={currentPage} onSelectPage={onSelectPage}/>
+            <NavMenu currentPage={currentPage} onSelectPage={onSelectPage} items={items}/>
           </div>
           {/* トップページ以外でBackToHomeButtonを表示 */}
           {pathname !== '/' && (

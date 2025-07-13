@@ -6,7 +6,8 @@ import BodyHead from './components/BodyHead';
 import BodyAbout from './components/BodyAbout';
 // import ServiceIcon from './components/ServiceIcon';
 // import BodyNews from './components/BodyNews';一旦なしで後で頑張って作る
-import BodyCTA from './components/BodyCTA';
+// import BodyCTA from './components/BodyCTA';
+import BodyEventCalendar from './components/BodyEventCalendar';
 import NavCard from './components/NavCard';
 import Foot from '../Foot/Foot';
 
@@ -61,7 +62,8 @@ export default function Body({ currentPage }: BodyProps) {
         <BodyAbout key="about" />, 
         // <ServiceIcon key="service" image="/images/AboutUs.png" title="AboutUs" link="/AboutUs"  />, 
         // <BodyNews key="news" />, 
-        <BodyCTA key="cta" />, 
+        // <BodyCTA key="cta" />, 
+        <BodyEventCalendar key="bodyeventcalendar"/>,
         <NavCard key="navcard" />, 
         <Foot key="foot"/>,
     ];
