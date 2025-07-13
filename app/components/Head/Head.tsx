@@ -27,7 +27,7 @@ const defaultNavItems = [
   { href: "#contact", value: "お問い合わせ" },
 ];
 
-const Head: React.FC<HeadProps> = ({ navItems, currentPage, onSelectPage, title, ...otherProps }) => {
+const Head: React.FC<HeadProps> = ({ navItems, currentPage, onSelectPage, title }) => {
   const pathname = usePathname();
   const items = navItems ?? defaultNavItems;
   return (
