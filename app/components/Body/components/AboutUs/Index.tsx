@@ -14,17 +14,19 @@ type IndexProps = {
   button: string;
   link: string;
 };
-
-const Index: React.FC<IndexProps> = ({ h2, vision, mission, descriptionService, contentsIT, descriptionNewProject, contentsNewProject, button, link }) => {
+// { h2, vision, mission, descriptionService, contentsIT, descriptionNewProject, contentsNewProject, button, link }
+const Index: React.FC<IndexProps> = ({ h2, vision, mission, button, link }) => {
   return (
     <div className={styles.indexContainer}>
-      <h2 className={styles.indexTitle}>{h2}</h2>
-      <div className={styles.indexVision}>{vision}</div>
-      <div className={styles.indexMission}>{mission}</div>
-      <div className={styles.indexDescription}>{descriptionService}</div>
+      <div className={styles.mainSection}>
+        <h2 className={styles.indexTitle}>{h2}</h2>
+        <div className={styles.indexVision}>vision: <span>{vision}</span></div>
+        <div className={styles.indexMission}>mission: {mission}</div>
+      </div>
+      {/* <div className={styles.indexDescription}>{descriptionService}</div>
       <p>{contentsIT}</p>
       <h5>{descriptionNewProject}</h5>
-      <p>{contentsNewProject}</p>
+      <p>{contentsNewProject}</p> */}
       <a href={link} className={styles.indexButton}>{button}</a>
     </div>
   );
