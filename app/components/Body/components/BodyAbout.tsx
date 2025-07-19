@@ -25,15 +25,15 @@ const BodyAbout: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      {/* <video
+      <video
           autoPlay
           loop
           muted
           playsInline
           className={styles.backgroundVideo}
         > 
-          <source src="/videos/souta.mp4" type="video/mp4" />
-        </video> */}
+          <source src="/videos/masaki.mp4" type="video/mp4" />
+        </video>
 
         <div
         className={styles.overlay}

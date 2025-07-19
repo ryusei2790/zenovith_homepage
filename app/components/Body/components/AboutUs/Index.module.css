@@ -9,22 +9,37 @@
   color: #fff;
 }
 
+.mainSection {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
 /* --- タイトル --- */
 .indexTitle {
-  font-size: 2.4rem;
+  background: linear-gradient(90deg, #e600ff 0%, #889efa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   font-weight: bold;
-  color: #fff;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.07em;
+  font-size: 2.2rem;
   text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.indexTitle.altGradient {
+  background: linear-gradient(90deg, #1e5bf7 0%, #86f3df 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* --- サブタイトル・ビジョン --- */
 .indexVision {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -33,6 +48,15 @@
   font-size: 1.1rem;
   color: #fff;
   margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.indexVision span,
+.indexMission span {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -47,6 +71,8 @@
 
 /* --- ボタン --- */
 .indexButton {
+  position: absolute;
+  bottom: 100px;
   display: inline-block;
   padding: 0.7em 2.2em;
   background: linear-gradient(90deg, #1e5bf7 0%, #86f3df 100%);
